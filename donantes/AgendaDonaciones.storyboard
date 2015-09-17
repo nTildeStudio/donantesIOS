@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="n6f-Eb-fYP">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="txc-Dc-2FF">
+            <objects>
+                <viewController id="n6f-Eb-fYP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f4x-CN-VuV"/>
+                        <viewControllerLayoutGuide type="bottom" id="cwj-Im-3DZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qif-gp-WXj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SOY EL MÓDULO DE AGENDA DE DONACIONES!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rN0-Ym-1UP">
+                                <rect key="frame" x="104" y="122" width="412" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="151" id="67A-A4-CAS"/>
+                                    <constraint firstAttribute="width" constant="384" id="YT8-QU-Wvb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="rN0-Ym-1UP" secondAttribute="centerX" id="2Au-VG-cPO"/>
+                            <constraint firstAttribute="centerY" secondItem="rN0-Ym-1UP" secondAttribute="centerY" id="Cf1-Gw-yck"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2vN-GJ-3pk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="641" y="274"/>
+        </scene>
+    </scenes>
+</document>
