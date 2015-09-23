@@ -10,9 +10,23 @@ import UIKit
 
 class ConfiguracionInicialIdentificadorDeDonanteViewController: UIViewController {
 
+    @IBOutlet weak var textFieldIdentificadorDonante: UITextField!
+    @IBOutlet weak var buttonOmitir: UIButton!
+    @IBOutlet weak var buttonContinuar: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Donantes!"
+        buttonContinuar.layer.borderColor = UIColor.redColor().CGColor
+        buttonContinuar.layer.borderWidth = 1.0
+        buttonContinuar.layer.cornerRadius = 6.0
+        buttonOmitir.layer.borderColor = UIColor.redColor().CGColor
+        buttonOmitir.layer.borderWidth = 1.0
+        buttonOmitir.layer.cornerRadius = 6.0
+        
+        textFieldIdentificadorDonante.layer.borderColor = UIColor.redColor().CGColor
+        textFieldIdentificadorDonante.layer.borderWidth = 1.0
+        textFieldIdentificadorDonante.layer.cornerRadius = 6.0
+        
         // Do any additional setup after loading the view.
     }
 

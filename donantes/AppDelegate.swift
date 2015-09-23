@@ -8,6 +8,9 @@
 
 import UIKit
 
+import Parse
+
+
 extension String {
     var localized: String {
         return NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: "")
@@ -17,140 +20,172 @@ extension String {
     }
 }
 
-//extension UIView {
-//    
-//    
-//    struct NLInnerShadowDirection : RawOptionSetType {
-//        typealias RawValue = UInt
-//        private var value: UInt = 0
-//        init(_ value: UInt) { self.value = value }
-//        init(rawValue value: UInt) { self.value = value }
-//        init(nilLiteral: ()) { self.value = 0 }
-//        static var allZeros: NLInnerShadowDirection { return self(0) }
-//        static func fromMask(raw: UInt) -> NLInnerShadowDirection { return self(raw) }
-//        var rawValue: UInt { return self.value }
-//        
-//        static var NLInnerShadowDirectionNone : NLInnerShadowDirection { return self(0) }
-//        static var NLInnerShadowDirectionLeft   : NLInnerShadowDirection { return self(1 << 0) }
-//        static var NLInnerShadowDirectionRight  : NLInnerShadowDirection  { return self(1 << 1) }
-//        static var NLInnerShadowDirectionTop : NLInnerShadowDirection   { return self(1 << 2) }
-//        static var NLInnerShadowDirectionBottom  : NLInnerShadowDirection   { return self(1 << 3) }
-//        static var NLInnerShadowDirectionAll  : NLInnerShadowDirection    { return self(15) }
-//    }
-//    
-//    func removeInnerShadow() {
-//        for view: UIView in subviews {
-//            if view.tag == kInnerShadowViewTag {
-//                view.removeFromSuperview()
-//            }
-//        }
-//    }
-//    
-//    func addInnerShadow() {
-//        var color: UIColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
-//        self.addInnerShadowWithRadius(3.0, andColor: color, inDirection: NLInnerShadowDirection.NLInnerShadowDirectionAll)
-//    }
-//    
-//    func addInnerShadowWithRadius(radius: CGFloat, andAlpha alpha: CGFloat) {
-//        var color: UIColor = UIColor.blackColor().colorWithAlphaComponent(alpha)
-//        self.addInnerShadowWithRadius(radius, andColor: color, inDirection: NLInnerShadowDirection.NLInnerShadowDirectionAll)
-//    }
-//    
-//    func addInnerShadowWithRadius(radius: CGFloat, andColor color: UIColor) {
-//        self.addInnerShadowWithRadius(radius, andColor: color, inDirection: NLInnerShadowDirection.NLInnerShadowDirectionAll)
-//    }
-//    
-//    func addInnerShadowWithRadius(radius: CGFloat, andColor color: UIColor, inDirection direction: NLInnerShadowDirection) {
-//        self.removeInnerShadow()
-//        var shadowView: UIView = self.createShadowViewWithRadius(radius, andColor: color, inDirection: direction)
-//        self.addSubview(shadowView)
-//    }
-//    
-//    func createShadowViewWithRadius(radius: CGFloat, andColor color: UIColor, inDirection direction: NLInnerShadowDirection) -> UIView {
-//        var shadowView: UIView = UIView(frame: CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height))
-//        shadowView.backgroundColor = UIColor.clearColor()
-//        shadowView.tag = kInnerShadowViewTag
-//        var shadow : CAGradientLayer
-//
-//        var colorsArray: [AnyObject] = [color.CGColor, UIColor.clearColor().CGColor]
-//        if direction & NLInnerShadowDirection.NLInnerShadowDirectionTop {
-//            var xOffset: CGFloat = 0.0
-//            var topWidth: CGFloat = self.bounds.size.width
-//            shadow = CAGradientLayer.layer()
-//            shadow.colors = colorsArray
-//            shadow.startPoint = CGPointMake(0.5, 0.0)
-//            shadow.endPoint = CGPointMake(0.5, 1.0)
-//            shadow.frame = CGRectMake(xOffset, 0, topWidth, radius)
-//            shadowView.layer.insertSublayer(shadow, atIndex: 0)
-//        }
-//        if direction & NLInnerShadowDirection.NLInnerShadowDirectionBottom {
-//            var xOffset: CGFloat = 0.0
-//            var bottomWidth: CGFloat = self.bounds.size.width
-//            shadow = CAGradientLayer.layer()
-//            shadow.colors = colorsArray
-//            shadow.startPoint = CGPointMake(0.5, 1.0)
-//            shadow.endPoint = CGPointMake(0.5, 0.0)
-//            shadow.frame = CGRectMake(xOffset, self.bounds.size.height - radius, bottomWidth, radius)
-//            shadowView.layer.insertSublayer(shadow, atIndex: 0)
-//        }
-//        if direction & NLInnerShadowDirection.NLInnerShadowDirectionLeft {
-//            var yOffset: CGFloat = 0.0
-//            var leftHeight: CGFloat = self.bounds.size.height
-//            shadow = CAGradientLayer.layer()
-//            shadow.colors = colorsArray
-//            shadow.frame = CGRectMake(0, yOffset, radius, leftHeight)
-//            shadow.startPoint = CGPointMake(0.0, 0.5)
-//            shadow.endPoint = CGPointMake(1.0, 0.5)
-//            shadowView.layer.insertSublayer(shadow, atIndex: 0)
-//        }
-//        if direction & NLInnerShadowDirection.NLInnerShadowDirectionRight {
-//            var yOffset: CGFloat = 0.0
-//            var rightHeight: CGFloat = self.bounds.size.height
-//            shadow = CAGradientLayer.layer()
-//            shadow.colors = colorsArray
-//            shadow.frame = CGRectMake(self.bounds.size.width - radius, yOffset, radius, rightHeight)
-//            shadow.startPoint = CGPointMake(1.0, 0.5)
-//            shadow.endPoint = CGPointMake(0.0, 0.5)
-//            shadowView.layer.insertSublayer(shadow, atIndex: 0)
-//        }
-//        return shadowView
-//    }
-//    
-//}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
-
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // Enable storing and querying data from Local Datastore.
+        // Remove this line if you don't want to use Local Datastore features or want to use cachePolicy.
+        Parse.enableLocalDatastore()
+        
+        // ****************************************************************************
+        // Uncomment this line if you want to enable Crash Reporting
+        // ParseCrashReporting.enable()
+        //
+        // Uncomment and fill in with your Parse credentials:
+        Parse.setApplicationId("9qm1kVlIwYlGQ8ZBvJiAj6GEj7mfBpfLmE2eGCh0", clientKey: "tD7aDDlGmcd2InKOho2g2KQCfg1OWUQhIfOdsAre")
+        //
+        // If you are using Facebook, uncomment and add your FacebookAppID to your bundle's plist as
+        // described here: https://developers.facebook.com/docs/getting-started/facebook-sdk-for-ios/
+        // Uncomment the line inside ParseStartProject-Bridging-Header and the following line here:
+        // PFFacebookUtils.initializeFacebook()
+        // ****************************************************************************
+        
+        PFUser.enableAutomaticUser()
+        
+        let defaultACL = PFACL();
+        
+        // If you would like all objects to be private by default, remove this line.
+        defaultACL.setPublicReadAccess(true)
+        
+        PFACL.setDefaultACL(defaultACL, withAccessForCurrentUser:true)
+        
+        if application.applicationState != UIApplicationState.Background {
+            // Track an app open here if we launch with a push, unless
+            // "content_available" was used to trigger a background push (introduced in iOS 7).
+            // In that case, we skip tracking here to avoid double counting the app-open.
+            
+            let preBackgroundPush = !application.respondsToSelector("backgroundRefreshStatus")
+            let oldPushHandlerOnly = !self.respondsToSelector("application:didReceiveRemoteNotification:fetchCompletionHandler:")
+            var noPushPayload = false;
+            if let options = launchOptions {
+                noPushPayload = options[UIApplicationLaunchOptionsRemoteNotificationKey] != nil;
+            }
+            if (preBackgroundPush || oldPushHandlerOnly || noPushPayload) {
+                PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+            }
+        }
+        
+        
+        //
+        //  Swift 2.0
+        //
+        //                if #available(iOS 8.0, *) {
+        
+        let types: UIUserNotificationType = [.Alert, .Badge, .Sound]
+        let settings = UIUserNotificationSettings(forTypes: types, categories: nil)
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
+        //                } else {
+        //                    let types: UIRemoteNotificationType = [.Alert, .Badge, .Sound]
+        //                    application.registerForRemoteNotificationTypes(types)
+        //                }
+        
+        
+        let query = PFQuery(className:"CentrosRegionales")
+       
+// query.whereKey("Nombre", equalTo:"Sean Plott")
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) scores.")
+                // Do something with the found objects
+
+                    for object in objects! {
+                        let _ = CentroDeDonacion(parseObject: object)
+                        print(object)
+                    }
+
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+
+        /*
+        let query2 = PFQuery(className: "CentrosRegionales")
+        query2.getObjectInBackgroundWithId("ivXsw2OT8H") {
+            (test: PFObject?, error: NSError?) -> Void in
+            if error == nil && test != nil {
+                print(test)
+            } else {
+                print(error)
+            }
+        }
+        */
         return true
     }
-
+    
+    //--------------------------------------
+    // MARK: Push Notifications
+    //--------------------------------------
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let installation = PFInstallation.currentInstallation()
+        installation.setDeviceTokenFromData(deviceToken)
+        installation.saveInBackground()
+        
+        PFPush.subscribeToChannelInBackground("") { (succeeded: Bool, error: NSError?) in
+            if succeeded {
+                print("ParseStarterProject successfully subscribed to push notifications on the broadcast channel.\n");
+            } else {
+                print("ParseStarterProject failed to subscribe to push notifications on the broadcast channel with error = %@.\n", error)
+            }
+        }
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        if error.code == 3010 {
+            print("Push notifications are not supported in the iOS Simulator.\n")
+        } else {
+            print("application:didFailToRegisterForRemoteNotificationsWithError: %@\n", error)
+        }
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        PFPush.handlePush(userInfo)
+        if application.applicationState == UIApplicationState.Inactive {
+            PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
+        }
+    }
+    
+    ///////////////////////////////////////////////////////////
+    // Uncomment this method if you want to use Push Notifications with Background App Refresh
+    ///////////////////////////////////////////////////////////
+    // func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+    //     if application.applicationState == UIApplicationState.Inactive {
+    //         PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
+    //     }
+    // }
+    
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
-
+    
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
-
+    
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
-
+    
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
-
+    
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    
 }
 

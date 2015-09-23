@@ -20,6 +20,7 @@ class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewControl
     @IBOutlet  var containerViewMap: UIView!
     @IBOutlet  var tableViewResults: UITableView!
     
+    @IBOutlet weak var viewInfoSeleccionaPuntoDonacion: UIView!
     @IBOutlet weak var constraintTableViewVisible: NSLayoutConstraint!
     @IBOutlet weak var constraintTableViewHidden: NSLayoutConstraint!
     
@@ -41,20 +42,35 @@ class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewControl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var blur:UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        var vibrancy:UIVibrancyEffect = UIVibrancyEffect(forBlurEffect: blur)
+        
+        self.title = "Donantes!"
+        
+        let blur:UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let vibrancy:UIVibrancyEffect = UIVibrancyEffect(forBlurEffect: blur)
 
 //        var effectView:UIVisualEffectView = UIVisualEffectView (effect: blur)
-        var effectView:UIVisualEffectView = UIVisualEffectView (effect: vibrancy)
+        let effectView:UIVisualEffectView = UIVisualEffectView (effect: vibrancy)
         effectView.frame = self.view.frame
 //        effectView.backgroundColor = UIColor.whiteColor()
 //                effectView.alpha = 0.4
 //        view.addSubview(effectView)
         view.insertSubview(effectView, atIndex: 0)
-
+        
+        
+        self.navigationController?.navigationBar.layer.shadowColor = UIColor.lightGrayColor().CGColor
+        self.navigationController?.navigationBar.layer.shadowRadius = 5.0
+        self.navigationController?.navigationBar.layer.shadowOpacity = 1.0
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSizeMake(0.0, 0.0)
+        
+        viewInfoSeleccionaPuntoDonacion.layer.shadowColor = UIColor.lightGrayColor().CGColor
+        viewInfoSeleccionaPuntoDonacion.layer.shadowRadius = 5.0
+        viewInfoSeleccionaPuntoDonacion.layer.shadowOpacity = 1.0
+        viewInfoSeleccionaPuntoDonacion.layer.shadowOffset = CGSizeMake(0.0, 0.0)
 
         constraintTableViewVisible.priority = 800
         constraintTableViewHidden.priority = 200
+        constraintMapViewPlusInfoView.priority = 200
+        
         isTableViewVisible = true
         
         loadTestData()
@@ -68,6 +84,7 @@ class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewControl
     }
     
         //MARK: IBActions
+    
     @IBAction func showPointInfo(sender: AnyObject) {
         if constraintMapViewFullScreen.priority == 800 {
             UIView.animateWithDuration(Double(0.35), animations: {
@@ -75,9 +92,10 @@ class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewControl
                 self.constraintMapViewPlusInfoView.priority = 800
                 self.viewInformacionPuntoDonacion.layoutIfNeeded()
                 self.mapViewPuntosDonacion.layoutIfNeeded()
-                println("Entró MAP 1")
+                print("Entró MAP 1")
                 if self.firstTime {
-                    self.viewInformacionPuntoDonacion.addInnerShadow()
+                    self.viewInformacionPuntoDonacion.addInnerShadowWithRadius(CGFloat(4.0), andColor: UIColor.blackColor(), inDirection: [NLInnerShadowDirection.Top, NLInnerShadowDirection.Bottom])
+                    //addInnerShadow()
                     self.firstTime = false
                 }
             })
@@ -88,12 +106,13 @@ class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewControl
                 self.constraintMapViewPlusInfoView.priority = 200
                 self.viewInformacionPuntoDonacion.layoutIfNeeded()
                 self.mapViewPuntosDonacion.layoutIfNeeded()
-                println("Entró MAP 2")
+                print("Entró MAP 2")
             })
         }
 
         
     }
+    
     @IBAction func flipTapped(sender: AnyObject) {
         if isTableViewVisible {
             UIView.animateWithDuration(Double(0.5), animations: {
@@ -101,7 +120,7 @@ class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewControl
                 self.constraintTableViewHidden.priority = 800
                 self.tableViewResults.layoutIfNeeded()
                                 self.containerViewMap.layoutIfNeeded()
-                        println("Entró 1")
+                        print("Entró 1")
 
             })
 
@@ -113,7 +132,7 @@ class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewControl
                 self.constraintTableViewHidden.priority = 200
                 self.tableViewResults.layoutIfNeeded()
                 self.containerViewMap.layoutIfNeeded()
-                        println("Entró 2")
+                        print("Entró 2")
             })
 
                         isTableViewVisible = true
@@ -150,7 +169,8 @@ class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewControl
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(IdentifierCentroDonacionCell, forIndexPath: indexPath) as! CentroDeDonacionTableViewCell
-//        cell.label.text = "sdifhjdsafjsd"
+        cell.labelDireccionCentroDonacion.text = arrayCentrosDeDonacion[indexPath.row].direccion
+        cell.labelNombreCentroDonacion.text = arrayCentrosDeDonacion[indexPath.row].nombre
         return cell
     }
     

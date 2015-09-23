@@ -64,6 +64,7 @@
         shadow.endPoint = CGPointMake(0.5, 1.0);
         shadow.frame = CGRectMake(xOffset, 0, topWidth, radius);
         [shadowView.layer insertSublayer:shadow atIndex:0];
+
     }
 
     if(direction & NLInnerShadowDirectionBottom) {

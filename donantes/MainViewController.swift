@@ -25,6 +25,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                self.title = "Donantes!"
 //        var bounds = self.navigationController?.navigationBar.bounds as CGRect!
 //        var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
 //        visualEffectView.frame = bounds
@@ -43,7 +44,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if true  {
             
             let nc = self.storyboard!.instantiateViewControllerWithIdentifier("ConfiguracionInicialNavigationController") as! UINavigationController
-            let vc = nc.viewControllers.first as! ConfiguracionInicialSeleccionarCentroDonacionViewController
+//            let vc = nc.viewControllers.first as! ConfiguracionInicialSeleccionarCentroDonacionViewController
             
             self.presentViewController(nc, animated: true, completion: nil)
 
@@ -92,7 +93,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         let story = UIStoryboard(name: arrayModulos[indexPath.row].storyBoard, bundle: nil)
-        var vc = story.instantiateInitialViewController() as! UIViewController
+        let vc : UIViewController! = story.instantiateInitialViewController()! as UIViewController
         self.navigationController?.pushViewController(vc, animated: true)
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -103,7 +104,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     /**
     Función que se ocupa de cargar un array con todos los módulos disponibles en la APP, después de inicializar la información de los mismos
     
-    :returns: Array de objetos "ModuloOpcion" que representan los diferentes módulos disponibles en la APP
+    - returns: Array de objetos "ModuloOpcion" que representan los diferentes módulos disponibles en la APP
     */
     func loadModules() -> [ModuloOpcion] {
         var toret : [ModuloOpcion] = []

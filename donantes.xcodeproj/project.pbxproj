@@ -20,6 +20,14 @@
 		F12311601BAB063900680048 /* ConfiguracionInicialIdentificadorDeDonanteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F123115E1BAB063900680048 /* ConfiguracionInicialIdentificadorDeDonanteViewController.swift */; };
 		F12311621BAB064B00680048 /* ConfiguracionInicialGrupoSanguineoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12311611BAB064B00680048 /* ConfiguracionInicialGrupoSanguineoViewController.swift */; };
 		F12311631BAB064B00680048 /* ConfiguracionInicialGrupoSanguineoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12311611BAB064B00680048 /* ConfiguracionInicialGrupoSanguineoViewController.swift */; };
+		F133DD3B1BB2CA8000C84D16 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F133DD391BB2CA8000C84D16 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
+		F133DD3C1BB2CA8000C84D16 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F133DD391BB2CA8000C84D16 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
+		F133DD3D1BB2CA8000C84D16 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F133DD3A1BB2CA8000C84D16 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
+		F133DD3E1BB2CA8000C84D16 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F133DD3A1BB2CA8000C84D16 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
+		F16F314C1BB2ED2300BE1E68 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16F314B1BB2ED2300BE1E68 /* SystemConfiguration.framework */; };
+		F16F314E1BB2ED2C00BE1E68 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16F314D1BB2ED2C00BE1E68 /* AudioToolbox.framework */; };
+		F16F31501BB2ED7E00BE1E68 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F16F314F1BB2ED7E00BE1E68 /* libstdc++.6.tbd */; };
+		F16F31521BB2ED8A00BE1E68 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F16F31511BB2ED8A00BE1E68 /* libsqlite3.tbd */; };
 		F1E37BB01BA9963F00B78605 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E37BAF1BA9963F00B78605 /* MainViewController.swift */; };
 		F1E37BB11BA9963F00B78605 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E37BAF1BA9963F00B78605 /* MainViewController.swift */; };
 		F1E37BB31BA9997B00B78605 /* MainOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E37BB21BA9997B00B78605 /* MainOptionsTableViewCell.swift */; };
@@ -67,6 +75,12 @@
 		F123115B1BAB05E200680048 /* CentroDeDonacionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CentroDeDonacionTableViewCell.swift; sourceTree = "<group>"; };
 		F123115E1BAB063900680048 /* ConfiguracionInicialIdentificadorDeDonanteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguracionInicialIdentificadorDeDonanteViewController.swift; sourceTree = "<group>"; };
 		F12311611BAB064B00680048 /* ConfiguracionInicialGrupoSanguineoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguracionInicialGrupoSanguineoViewController.swift; sourceTree = "<group>"; };
+		F133DD391BB2CA8000C84D16 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		F133DD3A1BB2CA8000C84D16 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		F16F314B1BB2ED2300BE1E68 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F16F314D1BB2ED2C00BE1E68 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F16F314F1BB2ED7E00BE1E68 /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
+		F16F31511BB2ED8A00BE1E68 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		F1E37BAF1BA9963F00B78605 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F1E37BB21BA9997B00B78605 /* MainOptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		F1E37BB51BA99A1600B78605 /* ModuloOpcion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuloOpcion.swift; sourceTree = "<group>"; };
@@ -87,6 +101,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F16F31521BB2ED8A00BE1E68 /* libsqlite3.tbd in Frameworks */,
+				F16F31501BB2ED7E00BE1E68 /* libstdc++.6.tbd in Frameworks */,
+				F16F314E1BB2ED2C00BE1E68 /* AudioToolbox.framework in Frameworks */,
+				F16F314C1BB2ED2300BE1E68 /* SystemConfiguration.framework in Frameworks */,
+				F133DD3B1BB2CA8000C84D16 /* Bolts.framework in Frameworks */,
+				F133DD3D1BB2CA8000C84D16 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +114,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F133DD3E1BB2CA8000C84D16 /* Parse.framework in Frameworks */,
+				F133DD3C1BB2CA8000C84D16 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +128,7 @@
 				38EFDDB01BA6FCFC0021B367 /* donantes */,
 				38EFDDC61BA6FCFC0021B367 /* donantesTests */,
 				38EFDDAF1BA6FCFC0021B367 /* Products */,
+				B56AFD89753B8DCA09698A65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +185,19 @@
 				38EFDDC81BA6FCFC0021B367 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B56AFD89753B8DCA09698A65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F16F31511BB2ED8A00BE1E68 /* libsqlite3.tbd */,
+				F16F314F1BB2ED7E00BE1E68 /* libstdc++.6.tbd */,
+				F16F314D1BB2ED2C00BE1E68 /* AudioToolbox.framework */,
+				F16F314B1BB2ED2300BE1E68 /* SystemConfiguration.framework */,
+				F133DD391BB2CA8000C84D16 /* Bolts.framework */,
+				F133DD3A1BB2CA8000C84D16 /* Parse.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F12311531BAB056D00680048 /* Donde Donar */ = {
@@ -280,7 +316,9 @@
 		38EFDDA61BA6FCFC0021B367 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Alvaro;
 				TargetAttributes = {
 					38EFDDAD1BA6FCFC0021B367 = {
@@ -428,6 +466,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -443,7 +482,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -482,7 +521,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -495,8 +534,30 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = donantes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nTilde.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "donantes/donantes-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -508,8 +569,30 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = donantes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nTilde.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "donantes/donantes-Bridging-Header.h";
 			};
@@ -523,6 +606,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -530,6 +614,7 @@
 				);
 				INFOPLIST_FILE = donantesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nTilde.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "donantes/donantesTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -545,9 +630,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = donantesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nTilde.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "donantes/donantesTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/donantes.app/donantes";
