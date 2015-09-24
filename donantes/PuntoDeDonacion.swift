@@ -28,10 +28,13 @@ class PuntoDeDonacion: NSObject, MKAnnotation {
     var nombre : String?
     /// Teléfono del punto de donación
     var telefono : String?
+    /// Identificador del objeto dentro de la BD de Parse
+    var identifier : String?
     
     var arrayHorarios : [HorarioDeDonacion] = []
     
     init (parseObject : PFObject) {
+                identifier = parseObject.objectId
         nombre = parseObject["Nombre"] as? String
         direccion = parseObject["Direccion"] as? String
         telefono = parseObject["Telefono"] as? String

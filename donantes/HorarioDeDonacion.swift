@@ -15,13 +15,18 @@ class HorarioDeDonacion: NSObject {
     var fechaFin : NSDate?
     var horaInicio : NSDate?
     var horaFin : NSDate?
+    
+    /// Identificador del objeto dentro de la BD de Parse
+    var identifier : String?
+    
     private var stringFechaInicio : String?
     private var stringFechaFin : String?
     private var stringHoraInicio : String?
     private var stringHoraFin : String?
     
+    
     init (parseObject : PFObject) {
-//        print(parseObject)
+        identifier = parseObject.objectId
         stringFechaInicio = parseObject["FechaInicio"] as? String
         stringFechaFin = parseObject["FechaFin"] as? String
         stringHoraInicio = parseObject["Horario"] as? String

@@ -58,6 +58,7 @@ class CentroRegional: NSObject, MKAnnotation {
     }
     
     init (parseObject : PFObject) {
+        identifier = parseObject.objectId
         nombre = parseObject["Nombre"] as? String
         direccion = parseObject["Direccion"] as? String
         telefono = parseObject["Telefono"] as? String

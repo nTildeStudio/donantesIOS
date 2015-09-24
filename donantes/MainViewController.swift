@@ -32,22 +32,16 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        visualEffectView.autoresizingMask = .FlexibleHeight | .FlexibleWidth
 //        self.navigationController?.navigationBar.addSubview(visualEffectView)
         
-
-
-        
         arrayModulos = loadModules()
         self.tableViewListadoOpciones.reloadData()
-    }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        if true  {
-            
+        if AppInfo.sharedInstance.identificadorCentroRegional != nil  && AppInfo.sharedInstance.identificadorCentroRegional != ""{
+            APIParseCommunicator.getCentroRegionaleInBackground(AppInfo.sharedInstance.identificadorCentroRegional!, completion: { (result) -> Void in
+                AppInfo.sharedInstance.centroRegional = result
+            })
+        } else {
             let nc = self.storyboard!.instantiateViewControllerWithIdentifier("ConfiguracionInicialNavigationController") as! UINavigationController
-//            let vc = nc.viewControllers.first as! ConfiguracionInicialSeleccionarCentroDonacionViewController
-            
             self.presentViewController(nc, animated: true, completion: nil)
-
         }
     }
     

@@ -44,6 +44,7 @@ class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewControl
     var firstTime : Bool = true
     
     var arrayCentrosDeDonacion : [CentroRegional] = []
+    var centroRegionalSeleccionado : CentroRegional?
     
     // MARK: - View lifecicle
     
@@ -203,6 +204,7 @@ class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewControl
     //MARK: TableView delegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
+        centroRegionalSeleccionado = arrayCentrosDeDonacion[indexPath.row]
         self.performSegueWithIdentifier("goToIdentificadorDeDonanteSegue", sender: nil)
     }
     
@@ -215,6 +217,7 @@ class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewControl
     }
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        centroRegionalSeleccionado = view.annotation as? CentroRegional
         showPointInfo(view.annotation as! CentroRegional)
     }
     
@@ -225,14 +228,18 @@ class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewControl
         }
     }
     
-    /*
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
+        if segue.identifier == "goToIdentificadorDeDonanteSegue" {
+            AppInfo.sharedInstance.centroRegional = centroRegionalSeleccionado
+            AppInfo.sharedInstance.identificadorCentroRegional = centroRegionalSeleccionado?.identifier
+        }
     }
-    */
+    
     
 }

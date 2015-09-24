@@ -18,6 +18,8 @@
 		F1026F2B1BB3EEE3003C69B5 /* PuntoDeDonacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1026F291BB3EEE3003C69B5 /* PuntoDeDonacion.swift */; settings = {ASSET_TAGS = (); }; };
 		F1026F2D1BB3F3AE003C69B5 /* HorarioDeDonacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1026F2C1BB3F3AE003C69B5 /* HorarioDeDonacion.swift */; settings = {ASSET_TAGS = (); }; };
 		F1026F2E1BB3F3AE003C69B5 /* HorarioDeDonacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1026F2C1BB3F3AE003C69B5 /* HorarioDeDonacion.swift */; settings = {ASSET_TAGS = (); }; };
+		F1026F301BB40C3E003C69B5 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1026F2F1BB40C3E003C69B5 /* AppInfo.swift */; settings = {ASSET_TAGS = (); }; };
+		F1026F311BB40C3E003C69B5 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1026F2F1BB40C3E003C69B5 /* AppInfo.swift */; settings = {ASSET_TAGS = (); }; };
 		F12311511BAB056200680048 /* CentroRegional.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12311501BAB056200680048 /* CentroRegional.swift */; };
 		F12311521BAB056200680048 /* CentroRegional.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12311501BAB056200680048 /* CentroRegional.swift */; };
 		F123115C1BAB05E200680048 /* CentroDeDonacionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F123115B1BAB05E200680048 /* CentroDeDonacionTableViewCell.swift */; };
@@ -80,6 +82,7 @@
 		F1026F261BB3D8E9003C69B5 /* APIParseCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIParseCommunicator.swift; sourceTree = "<group>"; };
 		F1026F291BB3EEE3003C69B5 /* PuntoDeDonacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntoDeDonacion.swift; sourceTree = "<group>"; };
 		F1026F2C1BB3F3AE003C69B5 /* HorarioDeDonacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorarioDeDonacion.swift; sourceTree = "<group>"; };
+		F1026F2F1BB40C3E003C69B5 /* AppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		F12311501BAB056200680048 /* CentroRegional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CentroRegional.swift; sourceTree = "<group>"; };
 		F123115B1BAB05E200680048 /* CentroDeDonacionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CentroDeDonacionTableViewCell.swift; sourceTree = "<group>"; };
 		F123115E1BAB063900680048 /* ConfiguracionInicialIdentificadorDeDonanteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguracionInicialIdentificadorDeDonanteViewController.swift; sourceTree = "<group>"; };
@@ -253,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				F1E37BB51BA99A1600B78605 /* ModuloOpcion.swift */,
+				F1026F2F1BB40C3E003C69B5 /* AppInfo.swift */,
 				F12311501BAB056200680048 /* CentroRegional.swift */,
 				F1026F291BB3EEE3003C69B5 /* PuntoDeDonacion.swift */,
 				F1026F2C1BB3F3AE003C69B5 /* HorarioDeDonacion.swift */,
@@ -409,6 +413,7 @@
 				F1026F2A1BB3EEE3003C69B5 /* PuntoDeDonacion.swift in Sources */,
 				F1E37BDA1BAAD74900B78605 /* UIView+InnerShadow.m in Sources */,
 				F1026F2D1BB3F3AE003C69B5 /* HorarioDeDonacion.swift in Sources */,
+				F1026F301BB40C3E003C69B5 /* AppInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +432,7 @@
 				F12311631BAB064B00680048 /* ConfiguracionInicialGrupoSanguineoViewController.swift in Sources */,
 				F1026F2B1BB3EEE3003C69B5 /* PuntoDeDonacion.swift in Sources */,
 				38EFDDCA1BA6FCFC0021B367 /* donantesTests.swift in Sources */,
+				F1026F311BB40C3E003C69B5 /* AppInfo.swift in Sources */,
 				F1E37BC71BA9B80600B78605 /* AppDelegate.swift in Sources */,
 				F1E37BDB1BAAD74900B78605 /* UIView+InnerShadow.m in Sources */,
 				F1E37BB11BA9963F00B78605 /* MainViewController.swift in Sources */,

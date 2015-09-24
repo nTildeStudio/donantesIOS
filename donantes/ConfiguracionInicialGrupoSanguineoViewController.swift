@@ -50,7 +50,7 @@ class ConfiguracionInicialGrupoSanguineoViewController: UIViewController, UIPick
     
     // MARK : IBActions
     @IBAction func aceptarPushed(sender: AnyObject) {
-        // TODO: Pendiente almacenar el valor de configuración seleccionado por el usuario
+        AppInfo.sharedInstance.grupoSanguineoDonante = grupoSeleccionado
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func omitirPushed(sender: AnyObject) {
