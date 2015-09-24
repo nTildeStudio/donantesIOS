@@ -87,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let query = PFQuery(className:"CentrosRegionales")
        
-// query.whereKey("Nombre", equalTo:"Sean Plott")
+ query.whereKey("Nombre", equalTo:"Sean Plott")
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
@@ -97,7 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // Do something with the found objects
 
                     for object in objects! {
-                        let _ = CentroDeDonacion(parseObject: object)
+                        let _ = CentroRegional(parseObject: object)
                         print(object)
                     }
 

@@ -13,9 +13,9 @@ import MapKit
 let IdentifierCentroDonacionCell = "CentroDeDonacionTableViewCell"
 
 /// Controlador que gestiona el primer paso de la configuración de la APP. En él el usuario seleccionará un centro de donación.
-class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
-
- // MARK: Outlets
+class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewController, UITableViewDelegate,UITableViewDataSource, MKMapViewDelegate {
+    
+    // MARK: Outlets
     
     @IBOutlet  var containerViewMap: UIView!
     @IBOutlet  var tableViewResults: UITableView!
@@ -24,19 +24,26 @@ class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewControl
     @IBOutlet weak var constraintTableViewVisible: NSLayoutConstraint!
     @IBOutlet weak var constraintTableViewHidden: NSLayoutConstraint!
     
-
+    
     @IBOutlet weak var constraintMapViewFullScreen: NSLayoutConstraint!
     @IBOutlet weak var constraintMapViewPlusInfoView: NSLayoutConstraint!
     
     @IBOutlet weak var viewInformacionPuntoDonacion: UIView!
     @IBOutlet weak var mapViewPuntosDonacion: MKMapView!
     
-// MARK: Variables
+    @IBOutlet weak var labelNombreCentroDonacionSeleccionado: UILabel!
+    @IBOutlet weak var labelDescripcionCentroDonacionSeleccionado: UILabel!
+    @IBOutlet weak var labelDireccionCentoDonacionSeleccionado: UILabel!
+    @IBOutlet weak var labelDistanciaCentroDonacionSeleccionado: UILabel!
+    @IBOutlet weak var buttonSeleccionarCentroDonacion: UIButton!
+    
+    
+    // MARK: Variables
     
     var isTableViewVisible : Bool = true
     var firstTime : Bool = true
     
-    var arrayCentrosDeDonacion : [CentroDeDonacion] = []
+    var arrayCentrosDeDonacion : [CentroRegional] = []
     
     // MARK: - View lifecicle
     
@@ -47,13 +54,13 @@ class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewControl
         
         let blur:UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         let vibrancy:UIVibrancyEffect = UIVibrancyEffect(forBlurEffect: blur)
-
-//        var effectView:UIVisualEffectView = UIVisualEffectView (effect: blur)
+        
+        //        var effectView:UIVisualEffectView = UIVisualEffectView (effect: blur)
         let effectView:UIVisualEffectView = UIVisualEffectView (effect: vibrancy)
         effectView.frame = self.view.frame
-//        effectView.backgroundColor = UIColor.whiteColor()
-//                effectView.alpha = 0.4
-//        view.addSubview(effectView)
+        //        effectView.backgroundColor = UIColor.whiteColor()
+        //                effectView.alpha = 0.4
+        //        view.addSubview(effectView)
         view.insertSubview(effectView, atIndex: 0)
         
         
@@ -66,50 +73,69 @@ class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewControl
         viewInfoSeleccionaPuntoDonacion.layer.shadowRadius = 5.0
         viewInfoSeleccionaPuntoDonacion.layer.shadowOpacity = 1.0
         viewInfoSeleccionaPuntoDonacion.layer.shadowOffset = CGSizeMake(0.0, 0.0)
-
+        
+        buttonSeleccionarCentroDonacion.layer.borderColor = UIColor.redColor().CGColor
+        buttonSeleccionarCentroDonacion.layer.borderWidth = 1.0
+        buttonSeleccionarCentroDonacion.layer.cornerRadius = 6.0
+        
         constraintTableViewVisible.priority = 800
         constraintTableViewHidden.priority = 200
         constraintMapViewPlusInfoView.priority = 200
         
         isTableViewVisible = true
         
-        loadTestData()
-
-        tableViewResults.reloadData()
+        mapViewPuntosDonacion.delegate = self
+        //        arrayCentrosDeDonacion = APIParseCommunicator.getListOfCentrosDeDonacion()
+        
+        APIParseCommunicator.getListOfCentrosRegionalesInBackground { (result) -> Void in
+            self.arrayCentrosDeDonacion = result
+            self.tableViewResults.reloadData()
+            self.insertDataOnMap()
+            
+        }
+        
+        
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-        //MARK: IBActions
+    //MARK: IBActions
     
-    @IBAction func showPointInfo(sender: AnyObject) {
+    func showPointInfo(point : CentroRegional) {
         if constraintMapViewFullScreen.priority == 800 {
             UIView.animateWithDuration(Double(0.35), animations: {
                 self.constraintMapViewFullScreen.priority = 200
                 self.constraintMapViewPlusInfoView.priority = 800
                 self.viewInformacionPuntoDonacion.layoutIfNeeded()
                 self.mapViewPuntosDonacion.layoutIfNeeded()
-                print("Entró MAP 1")
+                
                 if self.firstTime {
                     self.viewInformacionPuntoDonacion.addInnerShadowWithRadius(CGFloat(4.0), andColor: UIColor.blackColor(), inDirection: [NLInnerShadowDirection.Top, NLInnerShadowDirection.Bottom])
                     //addInnerShadow()
                     self.firstTime = false
                 }
             })
-        } else  {
-            UIView.animateWithDuration(Double(0.35), animations: {
-                
-                self.constraintMapViewFullScreen.priority = 800
-                self.constraintMapViewPlusInfoView.priority = 200
-                self.viewInformacionPuntoDonacion.layoutIfNeeded()
-                self.mapViewPuntosDonacion.layoutIfNeeded()
-                print("Entró MAP 2")
-            })
+            labelDescripcionCentroDonacionSeleccionado.text = point.descripcion
+            labelNombreCentroDonacionSeleccionado.text = point.nombre
+            labelDireccionCentoDonacionSeleccionado.text = point.direccion
         }
-
+        
+        /*        else  {
+        UIView.animateWithDuration(Double(0.35), animations: {
+        
+        self.constraintMapViewFullScreen.priority = 800
+        self.constraintMapViewPlusInfoView.priority = 200
+        self.viewInformacionPuntoDonacion.layoutIfNeeded()
+        self.mapViewPuntosDonacion.layoutIfNeeded()
+        print("Entró MAP 2")
+        })
+        }
+        */
+        
         
     }
     
@@ -119,27 +145,27 @@ class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewControl
                 self.constraintTableViewVisible.priority = 200
                 self.constraintTableViewHidden.priority = 800
                 self.tableViewResults.layoutIfNeeded()
-                                self.containerViewMap.layoutIfNeeded()
-                        print("Entró 1")
-
+                self.containerViewMap.layoutIfNeeded()
+                print("Entró 1")
+                
             })
-
+            
             isTableViewVisible = false
         } else  {
             UIView.animateWithDuration(Double(0.5), animations: {
-
+                
                 self.constraintTableViewVisible.priority = 800
                 self.constraintTableViewHidden.priority = 200
                 self.tableViewResults.layoutIfNeeded()
                 self.containerViewMap.layoutIfNeeded()
-                        print("Entró 2")
+                print("Entró 2")
             })
-
-                        isTableViewVisible = true
+            
+            isTableViewVisible = true
         }
-
+        
     }
-
+    
     //MARK: TableView datasource
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if(tableView.respondsToSelector(Selector("setSeparatorInset:"))){
@@ -177,30 +203,36 @@ class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewControl
     //MARK: TableView delegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-     self.performSegueWithIdentifier("goToIdentificadorDeDonanteSegue", sender: nil)
-    }
-   
-    // MARK: Metodos para pruebas
-    
-    func loadTestData() {
-        arrayCentrosDeDonacion = [CentroDeDonacion(name: "Lionel el Grande", address: "Calle sin nombre, edificion sin número")
-            ,CentroDeDonacion(name: "Pedro", address: "Calle sin nombre, edificion sin número")
-                        ,CentroDeDonacion(name: "Fernando", address: "Calle sin nombre, edificion sin número")
-                        ,CentroDeDonacion(name: "Hermeniguilda", address: "Calle sin nombre, edificion sin número")
-                        ,CentroDeDonacion(name: "Wenceslao", address: "Calle sin nombre, edificion sin número")
-                        ,CentroDeDonacion(name: "Paquito", address: "Calle sin nombre, edificion sin número")
-                        ,CentroDeDonacion(name: "Benito", address: "Calle sin nombre, edificion sin número")
-        ]
+        self.performSegueWithIdentifier("goToIdentificadorDeDonanteSegue", sender: nil)
     }
     
-/*
+    // MARK: MapKit delegate
+    let regionRadius: CLLocationDistance = 1000
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+            regionRadius * 2.0, regionRadius * 2.0)
+        mapViewPuntosDonacion.setRegion(coordinateRegion, animated: true)
+    }
+    
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        showPointInfo(view.annotation as! CentroRegional)
+    }
+    
+    //MARK: funciones auxiliares
+    func insertDataOnMap() {
+        for pin in arrayCentrosDeDonacion {
+            mapViewPuntosDonacion.addAnnotation(pin)
+        }
+    }
+    
+    /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

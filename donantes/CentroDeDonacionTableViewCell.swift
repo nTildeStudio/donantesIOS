@@ -1,5 +1,5 @@
 //
-//  CentroDeDonacionTableViewCell.swift
+//  CentroRegionalTableViewCell.swift
 //  donantes
 //
 //  Created by Diego on 17/9/15.

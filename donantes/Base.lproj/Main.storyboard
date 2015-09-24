@@ -66,11 +66,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lnJ-e9-UjV" userLabel="Container view map">
                                 <rect key="frame" x="0.0" y="150" width="600" height="450"/>
                                 <subviews>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SHO-Y9-8GC" userLabel="Punto donacion info view">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="113"/>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SHO-Y9-8GC" userLabel="Punto donacion info view">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="112"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="600" verticalCompressionResistancePriority="600" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dqv-jU-C1h">
-                                                <rect key="frame" x="502" y="70" width="90" height="35"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="600" verticalCompressionResistancePriority="600" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dqv-jU-C1h">
+                                                <rect key="frame" x="502" y="69" width="90" height="35"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="700" constant="35" id="BDp-7a-tHO"/>
@@ -101,8 +101,8 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="600" verticalCompressionResistancePriority="600" misplaced="YES" text="Av.Steve Jobs, nº 34, Sevilla (África)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yT-g4-lz2">
-                                                <rect key="frame" x="8" y="70" width="486" height="35"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="600" verticalCompressionResistancePriority="600" text="Av.Steve Jobs, nº 34, Sevilla (África)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yT-g4-lz2">
+                                                <rect key="frame" x="8" y="69" width="486" height="35"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="14"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -114,17 +114,26 @@
                                                     <rect key="frame" x="8" y="105" width="286" height="30"/>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="600" verticalCompressionResistancePriority="600" misplaced="YES" text="Se encuentra a 346.74 metros de su posicións" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKy-KX-a9X">
-                                                <rect key="frame" x="502" y="8" width="90" height="54"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="600" verticalCompressionResistancePriority="600" text="Se encuentra a 346.74 metros de su posicións" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKy-KX-a9X">
+                                                <rect key="frame" x="502" y="8" width="90" height="53"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="12"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIZ-5a-7na">
+                                                <rect key="frame" x="8" y="29" width="489" height="40"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="pIZ-5a-7na" firstAttribute="top" secondItem="9i9-5p-ES5" secondAttribute="bottom" id="0y3-2k-O55"/>
                                             <constraint firstItem="9i9-5p-ES5" firstAttribute="top" secondItem="VKy-KX-a9X" secondAttribute="top" priority="700" id="1G5-Yj-oWT"/>
+                                            <constraint firstItem="pIZ-5a-7na" firstAttribute="bottom" secondItem="9yT-g4-lz2" secondAttribute="top" id="2bj-OA-XmW"/>
+                                            <constraint firstItem="pIZ-5a-7na" firstAttribute="leading" secondItem="9i9-5p-ES5" secondAttribute="leading" id="3Ug-i4-wGe"/>
                                             <constraint firstItem="9i9-5p-ES5" firstAttribute="leading" secondItem="9yT-g4-lz2" secondAttribute="leading" priority="700" id="8by-Kh-Ecg"/>
                                             <constraint firstItem="9yT-g4-lz2" firstAttribute="trailing" secondItem="Dqv-jU-C1h" secondAttribute="leading" priority="700" constant="-8" id="AlS-vG-cwq"/>
                                             <constraint firstItem="9i9-5p-ES5" firstAttribute="trailing" secondItem="Dqv-jU-C1h" secondAttribute="leading" priority="700" constant="-5" id="EpK-Oy-ilL"/>
@@ -135,12 +144,13 @@
                                             <constraint firstAttribute="trailing" secondItem="Dqv-jU-C1h" secondAttribute="trailing" priority="700" constant="8" id="hYI-1v-afL"/>
                                             <constraint firstItem="9i9-5p-ES5" firstAttribute="leading" secondItem="SHO-Y9-8GC" secondAttribute="leading" priority="700" constant="8" id="jL5-D3-Z8g"/>
                                             <constraint firstAttribute="bottom" secondItem="Dqv-jU-C1h" secondAttribute="bottom" priority="700" constant="8" id="mp6-ut-4KL"/>
+                                            <constraint firstItem="pIZ-5a-7na" firstAttribute="width" secondItem="9i9-5p-ES5" secondAttribute="width" priority="700" id="mt4-02-bXH"/>
                                             <constraint firstItem="Dqv-jU-C1h" firstAttribute="trailing" secondItem="VKy-KX-a9X" secondAttribute="trailing" priority="700" id="oeM-Ip-CuT"/>
                                             <constraint firstItem="VKy-KX-a9X" firstAttribute="width" secondItem="Dqv-jU-C1h" secondAttribute="width" priority="700" id="syp-iX-sPt"/>
                                         </constraints>
                                     </view>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NEO-Nb-4fK">
-                                        <rect key="frame" x="0.0" y="113" width="600" height="338"/>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NEO-Nb-4fK">
+                                        <rect key="frame" x="0.0" y="112" width="600" height="338"/>
                                         <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="0.0" y="74" width="400" height="226"/>
                                         </variation>
@@ -168,10 +178,10 @@
                                 <color key="separatorColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CentroDeDonacionTableViewCell" rowHeight="87" id="8xp-8T-xD2" customClass="CentroDeDonacionTableViewCell" customModule="donantes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="22" width="0.0" height="87"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8xp-8T-xD2" id="7dt-me-ACe">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="86.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Centro de transfusiones Lionel el Grande" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9P-Pb-57L">
@@ -247,31 +257,15 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ao7-w8-KnE">
-                                        <rect key="frame" x="250" y="55" width="100" height="40"/>
-                                        <color key="backgroundColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="0.53000000000000003" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="5XU-jo-geP"/>
-                                            <constraint firstAttribute="height" constant="40" id="5YL-jI-ANE"/>
-                                        </constraints>
-                                        <state key="normal" title="Imagínate que he pulsado un resultado en el mapa!">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="showPointInfo:" destination="q9k-Tz-09g" eventType="touchUpInside" id="maz-xu-E9K"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="Ao7-w8-KnE" secondAttribute="centerX" id="6AE-58-Kgt"/>
                                     <constraint firstItem="d7q-fl-89v" firstAttribute="leading" secondItem="Q3a-F4-cnV" secondAttribute="leading" constant="8" id="Guk-Vb-ea2"/>
                                     <constraint firstAttribute="bottom" secondItem="d7q-fl-89v" secondAttribute="bottom" constant="8" id="JZy-bQ-Z7d"/>
                                     <constraint firstAttribute="bottom" secondItem="kw1-5K-0Qj" secondAttribute="bottom" constant="8" id="KV2-68-UXu"/>
                                     <constraint firstItem="d7q-fl-89v" firstAttribute="trailing" secondItem="kw1-5K-0Qj" secondAttribute="leading" constant="-8" id="hzd-1r-4tY"/>
                                     <constraint firstItem="d7q-fl-89v" firstAttribute="top" secondItem="Q3a-F4-cnV" secondAttribute="top" constant="75" id="iyG-2l-rcr"/>
                                     <constraint firstAttribute="trailing" secondItem="kw1-5K-0Qj" secondAttribute="trailing" constant="8" id="ksu-k9-MSP"/>
-                                    <constraint firstAttribute="centerY" secondItem="Ao7-w8-KnE" secondAttribute="centerY" id="tNv-Ly-oEH"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -294,11 +288,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="9Vj-R8-YFO"/>
                     <connections>
+                        <outlet property="buttonSeleccionarCentroDonacion" destination="Dqv-jU-C1h" id="o4D-bj-leP"/>
                         <outlet property="constraintMapViewFullScreen" destination="g4u-zi-1sY" id="kuf-pg-5GN"/>
                         <outlet property="constraintMapViewPlusInfoView" destination="Z5e-iJ-3rr" id="6SY-Ys-f9B"/>
                         <outlet property="constraintTableViewHidden" destination="psM-Mb-Xhu" id="bWr-TN-PDa"/>
                         <outlet property="constraintTableViewVisible" destination="kd9-tX-3Ay" id="KM9-ai-DBi"/>
                         <outlet property="containerViewMap" destination="lnJ-e9-UjV" id="hnn-OU-e3C"/>
+                        <outlet property="labelDescripcionCentroDonacionSeleccionado" destination="pIZ-5a-7na" id="zAT-jE-Wbq"/>
+                        <outlet property="labelDireccionCentoDonacionSeleccionado" destination="9yT-g4-lz2" id="XuE-uJ-A6O"/>
+                        <outlet property="labelDistanciaCentroDonacionSeleccionado" destination="VKy-KX-a9X" id="YzV-pn-hdf"/>
+                        <outlet property="labelNombreCentroDonacionSeleccionado" destination="9i9-5p-ES5" id="Gkx-ug-H2t"/>
                         <outlet property="mapViewPuntosDonacion" destination="NEO-Nb-4fK" id="Btx-i4-8g0"/>
                         <outlet property="tableViewResults" destination="qcr-28-szy" id="yEN-ml-ibV"/>
                         <outlet property="viewInfoSeleccionaPuntoDonacion" destination="Q3a-F4-cnV" id="VAb-nB-Zqg"/>
@@ -330,7 +329,7 @@
                                         <rect key="frame" x="0.0" y="86" width="600" height="116"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JRQ-Dz-htg" id="GVE-j0-g4A">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="115.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="116"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SeY-gl-XN1">

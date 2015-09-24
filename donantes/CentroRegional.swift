@@ -1,5 +1,5 @@
 //
-//  CentroDeDonacion.swift
+//  CentroRegional.swift
 //  donantes
 //
 //  Created by Diego on 17/9/15.
@@ -10,10 +10,16 @@ import UIKit
 import Parse
 import MapKit
 /// Clase que contiene la información de un Centro de donación
-class CentroDeDonacion: NSObject, MKAnnotation {
+class CentroRegional: NSObject, MKAnnotation {
 
     /// Coordenadas del Centro de Donación
     var coordinate: CLLocationCoordinate2D
+    var title : String? {
+        return nombre
+    }
+    var subtitle : String? {
+        return descripcion
+    }
     
  /// Nombre del Centro
     var nombre : String?
@@ -27,7 +33,10 @@ class CentroDeDonacion: NSObject, MKAnnotation {
     var web : String?
     /// Identificador del objeto dentro de la BD de Parse
     var identifier : String?
+    
    
+    
+    
     init (name : String, address : String) {
         nombre = name
         direccion = address
@@ -56,9 +65,7 @@ class CentroDeDonacion: NSObject, MKAnnotation {
         descripcion = parseObject["Descripcion"] as? String
         let cord = parseObject["Ubicacion"] as! PFGeoPoint
                 coordinate = CLLocationCoordinate2DMake(cord.latitude, cord.longitude)
-        print("-->\(nombre)")
-                print(direccion)
-                print(telefono)
-                print(web)
     }
+    
+
 }

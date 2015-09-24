@@ -12,8 +12,14 @@
 		38EFDDBB1BA6FCFC0021B367 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38EFDDBA1BA6FCFC0021B367 /* Images.xcassets */; };
 		38EFDDBE1BA6FCFC0021B367 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38EFDDBC1BA6FCFC0021B367 /* LaunchScreen.xib */; };
 		38EFDDCA1BA6FCFC0021B367 /* donantesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFDDC91BA6FCFC0021B367 /* donantesTests.swift */; };
-		F12311511BAB056200680048 /* CentroDeDonacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12311501BAB056200680048 /* CentroDeDonacion.swift */; };
-		F12311521BAB056200680048 /* CentroDeDonacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12311501BAB056200680048 /* CentroDeDonacion.swift */; };
+		F1026F271BB3D8E9003C69B5 /* APIParseCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1026F261BB3D8E9003C69B5 /* APIParseCommunicator.swift */; settings = {ASSET_TAGS = (); }; };
+		F1026F281BB3D8EA003C69B5 /* APIParseCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1026F261BB3D8E9003C69B5 /* APIParseCommunicator.swift */; settings = {ASSET_TAGS = (); }; };
+		F1026F2A1BB3EEE3003C69B5 /* PuntoDeDonacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1026F291BB3EEE3003C69B5 /* PuntoDeDonacion.swift */; settings = {ASSET_TAGS = (); }; };
+		F1026F2B1BB3EEE3003C69B5 /* PuntoDeDonacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1026F291BB3EEE3003C69B5 /* PuntoDeDonacion.swift */; settings = {ASSET_TAGS = (); }; };
+		F1026F2D1BB3F3AE003C69B5 /* HorarioDeDonacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1026F2C1BB3F3AE003C69B5 /* HorarioDeDonacion.swift */; settings = {ASSET_TAGS = (); }; };
+		F1026F2E1BB3F3AE003C69B5 /* HorarioDeDonacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1026F2C1BB3F3AE003C69B5 /* HorarioDeDonacion.swift */; settings = {ASSET_TAGS = (); }; };
+		F12311511BAB056200680048 /* CentroRegional.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12311501BAB056200680048 /* CentroRegional.swift */; };
+		F12311521BAB056200680048 /* CentroRegional.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12311501BAB056200680048 /* CentroRegional.swift */; };
 		F123115C1BAB05E200680048 /* CentroDeDonacionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F123115B1BAB05E200680048 /* CentroDeDonacionTableViewCell.swift */; };
 		F123115D1BAB05E200680048 /* CentroDeDonacionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F123115B1BAB05E200680048 /* CentroDeDonacionTableViewCell.swift */; };
 		F123115F1BAB063900680048 /* ConfiguracionInicialIdentificadorDeDonanteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F123115E1BAB063900680048 /* ConfiguracionInicialIdentificadorDeDonanteViewController.swift */; };
@@ -71,7 +77,10 @@
 		38EFDDC31BA6FCFC0021B367 /* donantesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = donantesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38EFDDC81BA6FCFC0021B367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38EFDDC91BA6FCFC0021B367 /* donantesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = donantesTests.swift; sourceTree = "<group>"; };
-		F12311501BAB056200680048 /* CentroDeDonacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CentroDeDonacion.swift; sourceTree = "<group>"; };
+		F1026F261BB3D8E9003C69B5 /* APIParseCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIParseCommunicator.swift; sourceTree = "<group>"; };
+		F1026F291BB3EEE3003C69B5 /* PuntoDeDonacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntoDeDonacion.swift; sourceTree = "<group>"; };
+		F1026F2C1BB3F3AE003C69B5 /* HorarioDeDonacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorarioDeDonacion.swift; sourceTree = "<group>"; };
+		F12311501BAB056200680048 /* CentroRegional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CentroRegional.swift; sourceTree = "<group>"; };
 		F123115B1BAB05E200680048 /* CentroDeDonacionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CentroDeDonacionTableViewCell.swift; sourceTree = "<group>"; };
 		F123115E1BAB063900680048 /* ConfiguracionInicialIdentificadorDeDonanteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguracionInicialIdentificadorDeDonanteViewController.swift; sourceTree = "<group>"; };
 		F12311611BAB064B00680048 /* ConfiguracionInicialGrupoSanguineoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguracionInicialGrupoSanguineoViewController.swift; sourceTree = "<group>"; };
@@ -244,7 +253,10 @@
 			isa = PBXGroup;
 			children = (
 				F1E37BB51BA99A1600B78605 /* ModuloOpcion.swift */,
-				F12311501BAB056200680048 /* CentroDeDonacion.swift */,
+				F12311501BAB056200680048 /* CentroRegional.swift */,
+				F1026F291BB3EEE3003C69B5 /* PuntoDeDonacion.swift */,
+				F1026F2C1BB3F3AE003C69B5 /* HorarioDeDonacion.swift */,
+				F1026F261BB3D8E9003C69B5 /* APIParseCommunicator.swift */,
 			);
 			name = "Modelo de datos";
 			sourceTree = "<group>";
@@ -391,9 +403,12 @@
 				F1E37BB31BA9997B00B78605 /* MainOptionsTableViewCell.swift in Sources */,
 				38EFDDB41BA6FCFC0021B367 /* AppDelegate.swift in Sources */,
 				F12311621BAB064B00680048 /* ConfiguracionInicialGrupoSanguineoViewController.swift in Sources */,
-				F12311511BAB056200680048 /* CentroDeDonacion.swift in Sources */,
+				F1026F271BB3D8E9003C69B5 /* APIParseCommunicator.swift in Sources */,
+				F12311511BAB056200680048 /* CentroRegional.swift in Sources */,
 				F1E37BB61BA99A1600B78605 /* ModuloOpcion.swift in Sources */,
+				F1026F2A1BB3EEE3003C69B5 /* PuntoDeDonacion.swift in Sources */,
 				F1E37BDA1BAAD74900B78605 /* UIView+InnerShadow.m in Sources */,
+				F1026F2D1BB3F3AE003C69B5 /* HorarioDeDonacion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,13 +416,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F12311521BAB056200680048 /* CentroDeDonacion.swift in Sources */,
+				F12311521BAB056200680048 /* CentroRegional.swift in Sources */,
 				F1E37BB41BA9997B00B78605 /* MainOptionsTableViewCell.swift in Sources */,
+				F1026F2E1BB3F3AE003C69B5 /* HorarioDeDonacion.swift in Sources */,
 				F123115D1BAB05E200680048 /* CentroDeDonacionTableViewCell.swift in Sources */,
+				F1026F281BB3D8EA003C69B5 /* APIParseCommunicator.swift in Sources */,
 				F12311601BAB063900680048 /* ConfiguracionInicialIdentificadorDeDonanteViewController.swift in Sources */,
 				F1E37BB71BA99A1600B78605 /* ModuloOpcion.swift in Sources */,
 				F1E37BCD1BA9C08300B78605 /* ConfiguracionInicialSeleccionarCentroDonacionViewController.swift in Sources */,
 				F12311631BAB064B00680048 /* ConfiguracionInicialGrupoSanguineoViewController.swift in Sources */,
+				F1026F2B1BB3EEE3003C69B5 /* PuntoDeDonacion.swift in Sources */,
 				38EFDDCA1BA6FCFC0021B367 /* donantesTests.swift in Sources */,
 				F1E37BC71BA9B80600B78605 /* AppDelegate.swift in Sources */,
 				F1E37BDB1BAAD74900B78605 /* UIView+InnerShadow.m in Sources */,
