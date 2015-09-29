@@ -13,7 +13,7 @@ import MapKit
 let IdentifierCentroDonacionCell = "CentroDeDonacionTableViewCell"
 
 /// Controlador que gestiona el primer paso de la configuración de la APP. En él el usuario seleccionará un centro de donación.
-class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewController, UITableViewDelegate,UITableViewDataSource, MKMapViewDelegate {
+class ConfiguracionInicialSeleccionarCentroDonacionViewController: DonantesViewController, UITableViewDelegate,UITableViewDataSource, MKMapViewDelegate {
     
     // MARK: Outlets
     
@@ -87,12 +87,13 @@ class ConfiguracionInicialSeleccionarCentroDonacionViewController: UIViewControl
         
         mapViewPuntosDonacion.delegate = self
         //        arrayCentrosDeDonacion = APIParseCommunicator.getListOfCentrosDeDonacion()
-        
+                    showLoading()
         APIParseCommunicator.getListOfCentrosRegionalesInBackground { (result) -> Void in
+            
             self.arrayCentrosDeDonacion = result
             self.tableViewResults.reloadData()
             self.insertDataOnMap()
-            
+            self.hideLoading()
         }
         
         

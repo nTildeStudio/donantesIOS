@@ -12,7 +12,7 @@ import MapKit
 let PuntoDeDonacionTableViewCellIndentifier = "PuntoDeDonacionTableViewCellIndentifier"
 
 /// Controlador encargado de gestionar la vista que muestra el listado de puntos de donación asociados a un centro regional
-class ListadoPuntosDonacionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
+class ListadoPuntosDonacionViewController: DonantesViewController, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
 
     //MARK: Outlets
     
@@ -30,10 +30,11 @@ class ListadoPuntosDonacionViewController: UIViewController, UITableViewDataSour
     // MARK: - view lifecicle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+            showLoading()
         APIParseCommunicator.getListOfPuntosDeDonacionInBackground(AppInfo.sharedInstance.centroRegional!) { (result) -> Void in
             self.arrayPuntosDeDonacion = result
             self.tableViewPuntosDonacion.reloadData()
+            self.hideLoading()
         }
     }
 

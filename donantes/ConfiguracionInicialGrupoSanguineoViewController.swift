@@ -12,7 +12,7 @@ import UIKit
     let SinGrupo : String = " "
 
 /// Controlador encargado de gestionar la vista en la que el usuario selecciona su grupo sanguíneo
-class ConfiguracionInicialGrupoSanguineoViewController: UIViewController, UIPickerViewDataSource {
+class ConfiguracionInicialGrupoSanguineoViewController: DonantesViewController, UIPickerViewDataSource {
 
     //MARK: Outlets
     

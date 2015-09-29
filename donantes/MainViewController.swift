@@ -13,7 +13,7 @@ import UIKit
 let MainCellIdentifier = "MainOptionsTableViewCell"
 
 /// Controlador principal, se encarga de gestionar la vista principal de la APP, desde la que el usuario puede acceder a las diferentes opiones de la misma
-class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainViewController: DonantesViewController, UITableViewDataSource, UITableViewDelegate {
     
     //MARK: Outlets
     @IBOutlet weak var tableViewListadoOpciones: UITableView!
@@ -36,8 +36,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.tableViewListadoOpciones.reloadData()
     print(AppInfo.sharedInstance.identificadorCentroRegional)
         if AppInfo.sharedInstance.identificadorCentroRegional != nil  && AppInfo.sharedInstance.identificadorCentroRegional != ""{
+            showLoading()
             APIParseCommunicator.getCentroRegionaleInBackground(AppInfo.sharedInstance.identificadorCentroRegional!, completion: { (result) -> Void in
                 AppInfo.sharedInstance.centroRegional = result
+//                self.hideLoading()
             })
         } else {
             let nc = self.storyboard!.instantiateViewControllerWithIdentifier("ConfiguracionInicialNavigationController") as! UINavigationController

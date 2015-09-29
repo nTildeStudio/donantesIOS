@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class DetallePuntoDonacionViewController: UIViewController {
+class DetallePuntoDonacionViewController: DonantesViewController {
 
     //MARK: Outlets
 

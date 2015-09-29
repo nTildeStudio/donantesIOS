@@ -3,3 +3,5 @@
 //
 
 #import "UIView+InnerShadow.h"
+#import "FXBlurView.h"
+#import "MRActivityIndicatorView.h"

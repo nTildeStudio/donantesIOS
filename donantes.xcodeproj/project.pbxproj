@@ -63,6 +63,14 @@
 		F1E4C4C01BB9557D00E2904C /* PuntoDeDonacionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4C4BE1BB9557D00E2904C /* PuntoDeDonacionTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		F1E4C4C21BB9590500E2904C /* DetallePuntoDonacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4C4C11BB9590500E2904C /* DetallePuntoDonacionViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F1E4C4C31BB9590500E2904C /* DetallePuntoDonacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4C4C11BB9590500E2904C /* DetallePuntoDonacionViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F1E4C4C51BBAAA3100E2904C /* DonantesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4C4C41BBAAA3100E2904C /* DonantesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F1E4C4C61BBAAA3100E2904C /* DonantesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4C4C41BBAAA3100E2904C /* DonantesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F1E4C4C91BBAAEE200E2904C /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E4C4C81BBAAEE200E2904C /* FXBlurView.m */; settings = {ASSET_TAGS = (); }; };
+		F1E4C4CA1BBAAEE200E2904C /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E4C4C81BBAAEE200E2904C /* FXBlurView.m */; settings = {ASSET_TAGS = (); }; };
+		F1E4C4CE1BBAD43300E2904C /* MRActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E4C4CC1BBAD43300E2904C /* MRActivityIndicatorView.m */; settings = {ASSET_TAGS = (); }; };
+		F1E4C4CF1BBAD43300E2904C /* MRActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E4C4CC1BBAD43300E2904C /* MRActivityIndicatorView.m */; settings = {ASSET_TAGS = (); }; };
+		F1E4C4D21BBAD48900E2904C /* MRStopButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E4C4D11BBAD48900E2904C /* MRStopButton.m */; settings = {ASSET_TAGS = (); }; };
+		F1E4C4D31BBAD48900E2904C /* MRStopButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E4C4D11BBAD48900E2904C /* MRStopButton.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +123,15 @@
 		F1E4C4BB1BB93E9800E2904C /* ListadoPuntosDonacionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListadoPuntosDonacionViewController.swift; sourceTree = "<group>"; };
 		F1E4C4BE1BB9557D00E2904C /* PuntoDeDonacionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntoDeDonacionTableViewCell.swift; sourceTree = "<group>"; };
 		F1E4C4C11BB9590500E2904C /* DetallePuntoDonacionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetallePuntoDonacionViewController.swift; sourceTree = "<group>"; };
+		F1E4C4C41BBAAA3100E2904C /* DonantesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonantesViewController.swift; sourceTree = "<group>"; };
+		F1E4C4C71BBAAEE200E2904C /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		F1E4C4C81BBAAEE200E2904C /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		F1E4C4CB1BBAD43300E2904C /* MRActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRActivityIndicatorView.h; sourceTree = "<group>"; };
+		F1E4C4CC1BBAD43300E2904C /* MRActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRActivityIndicatorView.m; sourceTree = "<group>"; };
+		F1E4C4CD1BBAD43300E2904C /* MRStopableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRStopableView.h; sourceTree = "<group>"; };
+		F1E4C4D01BBAD48900E2904C /* MRStopButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRStopButton.h; sourceTree = "<group>"; };
+		F1E4C4D11BBAD48900E2904C /* MRStopButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRStopButton.m; sourceTree = "<group>"; };
+		F1E4C4D41BBAD4C500E2904C /* MRProgressHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRProgressHelper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +199,14 @@
 		38EFDDB11BA6FCFC0021B367 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F1E4C4D41BBAD4C500E2904C /* MRProgressHelper.h */,
+				F1E4C4CB1BBAD43300E2904C /* MRActivityIndicatorView.h */,
+				F1E4C4CC1BBAD43300E2904C /* MRActivityIndicatorView.m */,
+				F1E4C4D01BBAD48900E2904C /* MRStopButton.h */,
+				F1E4C4D11BBAD48900E2904C /* MRStopButton.m */,
+				F1E4C4CD1BBAD43300E2904C /* MRStopableView.h */,
+				F1E4C4C71BBAAEE200E2904C /* FXBlurView.h */,
+				F1E4C4C81BBAAEE200E2904C /* FXBlurView.m */,
 				F1E37BD81BAAD74900B78605 /* UIView+InnerShadow.h */,
 				F1E37BD91BAAD74900B78605 /* UIView+InnerShadow.m */,
 				38EFDDB21BA6FCFC0021B367 /* Info.plist */,
@@ -282,6 +307,7 @@
 			children = (
 				38EFDDB31BA6FCFC0021B367 /* AppDelegate.swift */,
 				F1E37BAF1BA9963F00B78605 /* MainViewController.swift */,
+				F1E4C4C41BBAAA3100E2904C /* DonantesViewController.swift */,
 				F1E37BB21BA9997B00B78605 /* MainOptionsTableViewCell.swift */,
 				F123115A1BAB05C800680048 /* Configuracion inicial */,
 				38EFDDB71BA6FCFC0021B367 /* Main.storyboard */,
@@ -412,12 +438,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1E4C4CE1BBAD43300E2904C /* MRActivityIndicatorView.m in Sources */,
 				F123115C1BAB05E200680048 /* CentroDeDonacionTableViewCell.swift in Sources */,
 				F1E37BCC1BA9C08300B78605 /* ConfiguracionInicialSeleccionarCentroDonacionViewController.swift in Sources */,
+				F1E4C4C91BBAAEE200E2904C /* FXBlurView.m in Sources */,
 				F1E4C4BF1BB9557D00E2904C /* PuntoDeDonacionTableViewCell.swift in Sources */,
 				F1E37BB01BA9963F00B78605 /* MainViewController.swift in Sources */,
 				F123115F1BAB063900680048 /* ConfiguracionInicialIdentificadorDeDonanteViewController.swift in Sources */,
 				F1E4C4BC1BB93E9800E2904C /* ListadoPuntosDonacionViewController.swift in Sources */,
+				F1E4C4C51BBAAA3100E2904C /* DonantesViewController.swift in Sources */,
+				F1E4C4D21BBAD48900E2904C /* MRStopButton.m in Sources */,
 				F1E37BB31BA9997B00B78605 /* MainOptionsTableViewCell.swift in Sources */,
 				38EFDDB41BA6FCFC0021B367 /* AppDelegate.swift in Sources */,
 				F12311621BAB064B00680048 /* ConfiguracionInicialGrupoSanguineoViewController.swift in Sources */,
@@ -440,9 +470,11 @@
 				F1E37BB41BA9997B00B78605 /* MainOptionsTableViewCell.swift in Sources */,
 				F1026F2E1BB3F3AE003C69B5 /* HorarioDeDonacion.swift in Sources */,
 				F123115D1BAB05E200680048 /* CentroDeDonacionTableViewCell.swift in Sources */,
+				F1E4C4D31BBAD48900E2904C /* MRStopButton.m in Sources */,
 				F1026F281BB3D8EA003C69B5 /* APIParseCommunicator.swift in Sources */,
 				F1E4C4C01BB9557D00E2904C /* PuntoDeDonacionTableViewCell.swift in Sources */,
 				F12311601BAB063900680048 /* ConfiguracionInicialIdentificadorDeDonanteViewController.swift in Sources */,
+				F1E4C4C61BBAAA3100E2904C /* DonantesViewController.swift in Sources */,
 				F1E37BB71BA99A1600B78605 /* ModuloOpcion.swift in Sources */,
 				F1E4C4BD1BB93E9800E2904C /* ListadoPuntosDonacionViewController.swift in Sources */,
 				F1E37BCD1BA9C08300B78605 /* ConfiguracionInicialSeleccionarCentroDonacionViewController.swift in Sources */,
@@ -450,8 +482,10 @@
 				F1026F2B1BB3EEE3003C69B5 /* PuntoDeDonacion.swift in Sources */,
 				38EFDDCA1BA6FCFC0021B367 /* donantesTests.swift in Sources */,
 				F1026F311BB40C3E003C69B5 /* AppInfo.swift in Sources */,
+				F1E4C4CF1BBAD43300E2904C /* MRActivityIndicatorView.m in Sources */,
 				F1E4C4C31BB9590500E2904C /* DetallePuntoDonacionViewController.swift in Sources */,
 				F1E37BC71BA9B80600B78605 /* AppDelegate.swift in Sources */,
+				F1E4C4CA1BBAAEE200E2904C /* FXBlurView.m in Sources */,
 				F1E37BDB1BAAD74900B78605 /* UIView+InnerShadow.m in Sources */,
 				F1E37BB11BA9963F00B78605 /* MainViewController.swift in Sources */,
 			);

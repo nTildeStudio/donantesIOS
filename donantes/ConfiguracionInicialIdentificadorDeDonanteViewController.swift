@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConfiguracionInicialIdentificadorDeDonanteViewController: UIViewController {
+class ConfiguracionInicialIdentificadorDeDonanteViewController: DonantesViewController {
 
     @IBOutlet weak var textFieldIdentificadorDonante: UITextField!
     @IBOutlet weak var buttonOmitir: UIButton!
