@@ -70,12 +70,32 @@ class DetallePuntoDonacionViewController: DonantesViewController {
             let myAction = UIAlertAction(title: "Llamar".localized, style: .Default, handler: {
                 (alert: UIAlertAction) -> Void in
                 print("LLAMA AL PUNTO DE DONACIÓN!!!")
+                if let phoneCallURL:NSURL = NSURL(string:"tel://\(self.puntoDonacion!.telefono)") {
+                    let application:UIApplication = UIApplication.sharedApplication()
+                    if (application.canOpenURL(phoneCallURL)) {
+                        application.openURL(phoneCallURL);
+                    }
+                }
             })
             optionMenu.addAction(myAction)
 
         let myAction2 = UIAlertAction(title: "Cómo llegar".localized, style: .Default, handler: {
             (alert: UIAlertAction) -> Void in
             print("LANZA EL MAPS PARA LLEGAR AL PUNTO DE DONACIÓN!!!")
+            let latitute:CLLocationDegrees =  self.puntoDonacion!.coordinate.latitude
+            let longitute:CLLocationDegrees =  self.puntoDonacion!.coordinate.longitude
+            
+            let regionDistance:CLLocationDistance = 10000
+            let coordinates = CLLocationCoordinate2DMake(latitute, longitute)
+            let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+            let options = [
+                MKLaunchOptionsMapCenterKey: NSValue(MKCoordinate: regionSpan.center),
+                MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan: regionSpan.span),
+            ]
+            let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+            let mapItem = MKMapItem(placemark: placemark)
+            mapItem.name = "\(self.puntoDonacion!.nombre)"
+            mapItem.openInMapsWithLaunchOptions(options)
         })
         optionMenu.addAction(myAction2)
         let cancelAction = UIAlertAction(title: "Cancel".localized, style: .Cancel, handler:
