@@ -58,11 +58,14 @@ class APIParseCommunicator : NSObject {
     */
     class func getListOfPuntosDeDonacionInBackground(centroRegional : CentroRegional ,completion: (result: [PuntoDeDonacion]) -> Void) {//)->[CentroRegional] {
         let query = PFQuery(className:"PuntosDeDonacion")
-         query.whereKey("CentroRegional", equalTo:centroRegional.identifier!)
+
+         query.whereKey("CentroRegional", equalTo:centroRegional.parseObject!)
         query.findObjectsInBackgroundWithBlock { (res : [PFObject]?, e: NSError?) -> Void in
             var toret : [PuntoDeDonacion] = []
+            if res != nil {
             for object in res! {
                 toret.append(PuntoDeDonacion(parseObject: object))
+                }
             }
             completion(result: toret)
         }
@@ -70,7 +73,7 @@ class APIParseCommunicator : NSObject {
     
     class func getListOfHorariosDeDonacionInBackground(centroRegional : PuntoDeDonacion ,completion: (result: [HorarioDeDonacion]) -> Void) {//)->[CentroRegional] {
         let query = PFQuery(className:"HorariosDeDonacion")
-
+         query.whereKey("PuntoDeDonacion", equalTo:centroRegional.parseObject!)
         query.findObjectsInBackgroundWithBlock { (res : [PFObject]?, e: NSError?) -> Void in
         var toret : [HorarioDeDonacion] = []
             for object in res! {

@@ -178,10 +178,10 @@
                                 <color key="separatorColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CentroDeDonacionTableViewCell" rowHeight="87" id="8xp-8T-xD2" customClass="CentroDeDonacionTableViewCell" customModule="donantes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="87"/>
+                                        <rect key="frame" x="0.0" y="22" width="0.0" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8xp-8T-xD2" id="7dt-me-ACe">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="86.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Centro de transfusiones Lionel el Grande" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9P-Pb-57L">
@@ -323,7 +323,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="n9w-qc-bSD">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainOptionsTableViewCell" rowHeight="116" id="JRQ-Dz-htg" customClass="MainOptionsTableViewCell" customModule="donantes" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="86" width="600" height="116"/>
@@ -333,19 +333,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SeY-gl-XN1">
-                                                    <rect key="frame" x="1" y="1" width="114" height="114"/>
+                                                    <rect key="frame" x="15" y="10" width="86" height="86"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="SeY-gl-XN1" secondAttribute="height" id="6Mi-TH-aDR"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CN-Lh-H7D">
-                                                    <rect key="frame" x="123" y="1" width="477" height="69"/>
+                                                    <rect key="frame" x="116" y="10" width="474" height="35"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08Y-n3-vbP">
-                                                    <rect key="frame" x="123" y="80" width="477" height="36"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08Y-n3-vbP">
+                                                    <rect key="frame" x="116" y="55" width="474" height="41"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -353,15 +353,15 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="08Y-n3-vbP" firstAttribute="top" secondItem="1CN-Lh-H7D" secondAttribute="bottom" constant="10" id="29o-L9-aNa"/>
-                                                <constraint firstAttribute="bottom" secondItem="SeY-gl-XN1" secondAttribute="bottom" constant="1" id="2DM-0r-GNB"/>
-                                                <constraint firstAttribute="trailing" secondItem="1CN-Lh-H7D" secondAttribute="trailing" id="AvB-NW-AIj"/>
+                                                <constraint firstAttribute="bottom" secondItem="SeY-gl-XN1" secondAttribute="bottom" constant="20" id="2DM-0r-GNB"/>
+                                                <constraint firstItem="1CN-Lh-H7D" firstAttribute="trailing" secondItem="GVE-j0-g4A" secondAttribute="trailing" constant="-10" id="AvB-NW-AIj"/>
                                                 <constraint firstItem="1CN-Lh-H7D" firstAttribute="top" secondItem="SeY-gl-XN1" secondAttribute="top" id="Mzz-5G-MMd"/>
                                                 <constraint firstItem="08Y-n3-vbP" firstAttribute="width" secondItem="1CN-Lh-H7D" secondAttribute="width" id="fOb-V5-ARO"/>
-                                                <constraint firstItem="SeY-gl-XN1" firstAttribute="leading" secondItem="GVE-j0-g4A" secondAttribute="leading" constant="1" id="gJK-8y-pBx"/>
-                                                <constraint firstItem="1CN-Lh-H7D" firstAttribute="height" secondItem="SeY-gl-XN1" secondAttribute="height" multiplier="0.6" id="geM-nD-kxC"/>
+                                                <constraint firstItem="SeY-gl-XN1" firstAttribute="leading" secondItem="GVE-j0-g4A" secondAttribute="leading" constant="15" id="gJK-8y-pBx"/>
+                                                <constraint firstItem="1CN-Lh-H7D" firstAttribute="height" secondItem="SeY-gl-XN1" secondAttribute="height" multiplier="0.4" id="geM-nD-kxC"/>
                                                 <constraint firstItem="08Y-n3-vbP" firstAttribute="leading" secondItem="1CN-Lh-H7D" secondAttribute="leading" id="n7s-B0-wco"/>
-                                                <constraint firstItem="SeY-gl-XN1" firstAttribute="top" secondItem="GVE-j0-g4A" secondAttribute="top" constant="1" id="pP1-Pt-uZN"/>
-                                                <constraint firstItem="1CN-Lh-H7D" firstAttribute="leading" secondItem="SeY-gl-XN1" secondAttribute="trailing" constant="8" id="sGX-aJ-eLO"/>
+                                                <constraint firstItem="SeY-gl-XN1" firstAttribute="top" secondItem="GVE-j0-g4A" secondAttribute="top" constant="10" id="pP1-Pt-uZN"/>
+                                                <constraint firstItem="1CN-Lh-H7D" firstAttribute="leading" secondItem="SeY-gl-XN1" secondAttribute="trailing" constant="15" id="sGX-aJ-eLO"/>
                                                 <constraint firstItem="08Y-n3-vbP" firstAttribute="bottom" secondItem="SeY-gl-XN1" secondAttribute="bottom" id="y1f-o6-RfU"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -393,7 +393,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qEB-k9-ERm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="715" y="379"/>
+            <point key="canvasLocation" x="510" y="379"/>
         </scene>
         <!--Configuracion Inicial Identificador De Donante View Controller-->
         <scene sceneID="6Iw-Dz-G1X">

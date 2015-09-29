@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rVu-nD-yDM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rVu-nD-yDM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Listado Puntos Donacion View Controller-->
         <scene sceneID="mNB-fZ-2uK">
             <objects>
-                <viewController id="rVu-nD-yDM" sceneMemberID="viewController">
+                <viewController id="rVu-nD-yDM" customClass="ListadoPuntosDonacionViewController" customModule="donantes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mtg-JJ-r8R"/>
                         <viewControllerLayoutGuide type="bottom" id="dgH-EK-udr"/>
@@ -16,28 +16,183 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SOY EL MÓDULO DE DONDE DONAR!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLM-4q-PJQ">
-                                <rect key="frame" x="104" y="122" width="384" height="151"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sHv-vG-bJS">
+                                <rect key="frame" x="0.0" y="600" width="600" height="0.0"/>
+                                <connections>
+                                    <outlet property="delegate" destination="rVu-nD-yDM" id="7lV-Wj-Kpk"/>
+                                </connections>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hGz-Oa-BKB">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="384" id="Bdy-J2-gBu"/>
-                                    <constraint firstAttribute="height" constant="151" id="lpZ-Ns-1ef"/>
+                                    <constraint firstAttribute="height" priority="200" id="kEp-15-Y9o"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PuntoDeDonacionTableViewCellIndentifier" selectionStyle="default" indentationWidth="10" reuseIdentifier="PuntoDeDonacionTableViewCellIndentifier" rowHeight="67" id="Yob-Jf-vJc" customClass="PuntoDeDonacionTableViewCell" customModule="donantes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="67"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yob-Jf-vJc" id="MZe-68-UP1">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="67"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koN-hh-hah">
+                                                    <rect key="frame" x="64" y="6" width="62" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="17X-Ne-QJ1"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dirección" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNR-lI-j3T">
+                                                    <rect key="frame" x="53" y="35" width="73" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="cbE-mx-4h6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KNR-lI-j3T" firstAttribute="top" secondItem="koN-hh-hah" secondAttribute="bottom" constant="8" id="5gf-y1-pOA"/>
+                                                <constraint firstAttribute="trailing" secondItem="koN-hh-hah" secondAttribute="trailing" constant="40" id="ADO-RX-quq"/>
+                                                <constraint firstItem="koN-hh-hah" firstAttribute="leading" secondItem="MZe-68-UP1" secondAttribute="leading" constant="10" id="Khq-jA-utp"/>
+                                                <constraint firstItem="koN-hh-hah" firstAttribute="top" secondItem="MZe-68-UP1" secondAttribute="top" constant="8" id="M9m-1x-jur"/>
+                                                <constraint firstItem="KNR-lI-j3T" firstAttribute="leading" secondItem="MZe-68-UP1" secondAttribute="leading" constant="10" id="eKF-GF-M23"/>
+                                                <constraint firstItem="KNR-lI-j3T" firstAttribute="width" secondItem="koN-hh-hah" secondAttribute="width" id="smV-J7-oSz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelDireccionPuntoDeDonacion" destination="KNR-lI-j3T" id="5gb-Sm-KT8"/>
+                                            <outlet property="labelNombrePuntoDonacion" destination="koN-hh-hah" id="xeR-S3-4ie"/>
+                                            <segue destination="pxu-ea-dgh" kind="show" identifier="goToDetallePuntoDonacionSegue" id="zra-tN-Zzw"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="rVu-nD-yDM" id="RnZ-fB-MTD"/>
+                                    <outlet property="delegate" destination="rVu-nD-yDM" id="0gj-zZ-N9f"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="VLM-4q-PJQ" secondAttribute="centerY" id="Lk6-P6-0hd"/>
-                            <constraint firstAttribute="centerX" secondItem="VLM-4q-PJQ" secondAttribute="centerX" id="zRc-Ab-Qu0"/>
+                            <constraint firstItem="sHv-vG-bJS" firstAttribute="leading" secondItem="oOD-9g-kof" secondAttribute="leading" id="0dy-41-6EQ"/>
+                            <constraint firstAttribute="trailing" secondItem="sHv-vG-bJS" secondAttribute="trailing" id="Ac1-Cx-FHf"/>
+                            <constraint firstItem="hGz-Oa-BKB" firstAttribute="top" secondItem="mtg-JJ-r8R" secondAttribute="bottom" id="De4-IZ-oNB"/>
+                            <constraint firstItem="sHv-vG-bJS" firstAttribute="top" secondItem="hGz-Oa-BKB" secondAttribute="bottom" id="Myg-R6-WM3"/>
+                            <constraint firstItem="hGz-Oa-BKB" firstAttribute="height" secondItem="oOD-9g-kof" secondAttribute="height" priority="900" id="gyg-Mm-qal"/>
+                            <constraint firstAttribute="trailing" secondItem="hGz-Oa-BKB" secondAttribute="trailing" id="lTu-p1-b0Q"/>
+                            <constraint firstItem="hGz-Oa-BKB" firstAttribute="leading" secondItem="oOD-9g-kof" secondAttribute="leading" id="o7m-nP-3CT"/>
+                            <constraint firstItem="dgH-EK-udr" firstAttribute="top" secondItem="sHv-vG-bJS" secondAttribute="bottom" id="vVK-fW-heR"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="constraintTableViewHidden" destination="kEp-15-Y9o" id="Umd-SK-ZcL"/>
+                        <outlet property="contraintTableViewFullScreen" destination="gyg-Mm-qal" id="bvg-QU-aYe"/>
+                        <outlet property="mapViewPuntosDonacion" destination="sHv-vG-bJS" id="DEx-MS-2o1"/>
+                        <outlet property="tableViewPuntosDonacion" destination="hGz-Oa-BKB" id="KCi-SN-3wU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pi1-Qa-RNV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="641" y="274"/>
+            <point key="canvasLocation" x="-97" y="128"/>
+        </scene>
+        <!--Detalle Punto Donacion View Controller-->
+        <scene sceneID="NiR-iy-bB3">
+            <objects>
+                <viewController id="pxu-ea-dgh" customClass="DetallePuntoDonacionViewController" customModule="donantes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WgX-di-THe"/>
+                        <viewControllerLayoutGuide type="bottom" id="EQT-QG-mRJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6hp-G6-kUF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dcD-Ry-wJS">
+                                <rect key="frame" x="0.0" y="217" width="600" height="384"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lPp-Mw-oO7">
+                                <rect key="frame" x="0.0" y="64" width="600" height="153"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nombre del punto de donación" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfc-55-fAb">
+                                        <rect key="frame" x="10" y="10" width="580" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dirección del punto de donación" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0o-jc-C4s">
+                                        <rect key="frame" x="10" y="41" width="580" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TEléfonoa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5H-SU-L1y">
+                                        <rect key="frame" x="10" y="71" width="580" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41Y-4W-Bk7">
+                                        <rect key="frame" x="10" y="102" width="580" height="41"/>
+                                        <string key="text">El horario es muy largo porque si no es muy largno no podemos probar qeu tdodo se ajuste al tamaño que nos interesa en cada momento de la app </string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="N0o-jc-C4s" firstAttribute="width" secondItem="Bfc-55-fAb" secondAttribute="width" id="FQx-yr-w5J"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bfc-55-fAb" secondAttribute="trailing" constant="10" id="J3i-nY-iNV"/>
+                                    <constraint firstItem="A5H-SU-L1y" firstAttribute="leading" secondItem="N0o-jc-C4s" secondAttribute="leading" id="JyE-FT-APb"/>
+                                    <constraint firstItem="A5H-SU-L1y" firstAttribute="width" secondItem="N0o-jc-C4s" secondAttribute="width" id="LxI-ZC-2ZQ"/>
+                                    <constraint firstItem="Bfc-55-fAb" firstAttribute="leading" secondItem="lPp-Mw-oO7" secondAttribute="leading" constant="10" id="MbH-xA-GLF"/>
+                                    <constraint firstItem="N0o-jc-C4s" firstAttribute="top" secondItem="Bfc-55-fAb" secondAttribute="bottom" constant="10" id="RIn-KT-zzD"/>
+                                    <constraint firstItem="N0o-jc-C4s" firstAttribute="leading" secondItem="Bfc-55-fAb" secondAttribute="leading" id="cMg-pR-wHh"/>
+                                    <constraint firstItem="41Y-4W-Bk7" firstAttribute="top" secondItem="A5H-SU-L1y" secondAttribute="bottom" constant="10" id="cuq-J9-hGo"/>
+                                    <constraint firstItem="A5H-SU-L1y" firstAttribute="top" secondItem="N0o-jc-C4s" secondAttribute="bottom" constant="10" id="f4i-h2-wPV"/>
+                                    <constraint firstItem="41Y-4W-Bk7" firstAttribute="width" secondItem="A5H-SU-L1y" secondAttribute="width" id="gyj-Mp-aqy"/>
+                                    <constraint firstItem="Bfc-55-fAb" firstAttribute="top" secondItem="lPp-Mw-oO7" secondAttribute="top" constant="10" id="hdM-WL-kb2"/>
+                                    <constraint firstItem="41Y-4W-Bk7" firstAttribute="leading" secondItem="A5H-SU-L1y" secondAttribute="leading" id="mEd-8u-fr7"/>
+                                    <constraint firstAttribute="bottom" secondItem="41Y-4W-Bk7" secondAttribute="bottom" constant="10" id="mWf-VD-77Q"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dcD-Ry-wJS" firstAttribute="leading" secondItem="6hp-G6-kUF" secondAttribute="leading" id="Jrd-8c-wDz"/>
+                            <constraint firstAttribute="trailing" secondItem="dcD-Ry-wJS" secondAttribute="trailing" id="KIY-YJ-QPl"/>
+                            <constraint firstItem="dcD-Ry-wJS" firstAttribute="top" secondItem="lPp-Mw-oO7" secondAttribute="bottom" id="Psl-po-JjZ"/>
+                            <constraint firstAttribute="trailing" secondItem="lPp-Mw-oO7" secondAttribute="trailing" id="WxG-PZ-Knq"/>
+                            <constraint firstItem="lPp-Mw-oO7" firstAttribute="leading" secondItem="6hp-G6-kUF" secondAttribute="leading" id="eXb-Pn-Sm5"/>
+                            <constraint firstItem="EQT-QG-mRJ" firstAttribute="top" secondItem="dcD-Ry-wJS" secondAttribute="bottom" id="kpp-j3-hNh"/>
+                            <constraint firstItem="lPp-Mw-oO7" firstAttribute="top" secondItem="WgX-di-THe" secondAttribute="bottom" id="mPg-sA-CrC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="saa-Vn-tky">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="NxD-tH-uGw">
+                            <connections>
+                                <action selector="doActionPushed:" destination="pxu-ea-dgh" id="peo-pI-OU4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="labelDireccionPuntoDeDonacion" destination="N0o-jc-C4s" id="t4n-1O-fNs"/>
+                        <outlet property="labelHorarioPuntoDeDonacion" destination="41Y-4W-Bk7" id="5dq-Di-LFV"/>
+                        <outlet property="labelNombrePuntoDeDonacion" destination="Bfc-55-fAb" id="vlh-VT-luM"/>
+                        <outlet property="labelTelefonoPuntoDeDonacion" destination="A5H-SU-L1y" id="COU-LY-kHX"/>
+                        <outlet property="mapViewDetallePuntoDonacion" destination="dcD-Ry-wJS" id="pzG-7N-iLm"/>
+                        <outlet property="viewInformacionPuntoDeDonacion" destination="lPp-Mw-oO7" id="fZT-yw-V8D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SfM-jw-qUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1134" y="200"/>
         </scene>
     </scenes>
 </document>

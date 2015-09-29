@@ -33,7 +33,8 @@ class CentroRegional: NSObject, MKAnnotation {
     var web : String?
     /// Identificador del objeto dentro de la BD de Parse
     var identifier : String?
-    
+    /// Objeto de parse en base al que se construye el objeto
+    var parseObject : PFObject?
    
     
     
@@ -58,6 +59,7 @@ class CentroRegional: NSObject, MKAnnotation {
     }
     
     init (parseObject : PFObject) {
+        self.parseObject = parseObject
         identifier = parseObject.objectId
         nombre = parseObject["Nombre"] as? String
         direccion = parseObject["Direccion"] as? String

@@ -36,6 +36,14 @@
     [self addInnerShadowWithRadius:radius andColor:color inDirection:NLInnerShadowDirectionAll];
 }
 
+- (void)addInnerShadowWithRadius:(CGFloat)radius fromColor:(UIColor *)color toColor:(UIColor *)colorEnd inDirection:(NLInnerShadowDirection)direction {
+    [self removeInnerShadow];
+    
+
+    UIView *shadowView = [self createShadowViewWithRadius:radius fromColor:color toColor:colorEnd inDirection:direction];
+    [self insertSubview:shadowView atIndex:0];
+    //    [self addSubview:shadowView];
+}
 - (void)addInnerShadowWithRadius:(CGFloat)radius andColor:(UIColor *)color inDirection:(NLInnerShadowDirection)direction {
     [self removeInnerShadow];
     
@@ -43,6 +51,68 @@
     
     [self insertSubview:shadowView atIndex:0];
 //    [self addSubview:shadowView];
+}
+
+
+- (UIView *)createShadowViewWithRadius:(CGFloat)radius fromColor:(UIColor *)color toColor:(UIColor *)colorEnd inDirection:(NLInnerShadowDirection)direction {
+    UIView *shadowView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
+    shadowView.backgroundColor = [UIColor clearColor];
+    shadowView.tag = kInnerShadowViewTag;
+    
+    CAGradientLayer *shadow;
+    NSArray *colorsArray = @[(id)[color CGColor], (id)[colorEnd CGColor]];
+    
+    if(direction & NLInnerShadowDirectionTop) {
+        CGFloat xOffset = 0.0f;
+        CGFloat topWidth = self.bounds.size.width;
+        
+        
+        shadow = [CAGradientLayer layer];
+        shadow.colors = colorsArray;
+        shadow.startPoint = CGPointMake(0.5, 0.0);
+        shadow.endPoint = CGPointMake(0.5, 1.0);
+        shadow.frame = CGRectMake(xOffset, 0, topWidth, radius);
+        [shadowView.layer insertSublayer:shadow atIndex:0];
+        
+    }
+    
+    if(direction & NLInnerShadowDirectionBottom) {
+        CGFloat xOffset = 0.0f;
+        CGFloat bottomWidth = self.bounds.size.width;
+        
+        shadow = [CAGradientLayer layer];
+        shadow.colors = colorsArray;
+        shadow.startPoint = CGPointMake(0.5, 1.0);
+        shadow.endPoint = CGPointMake(0.5, 0.0);
+        shadow.frame = CGRectMake(xOffset, self.bounds.size.height - radius, bottomWidth, radius);
+        [shadowView.layer insertSublayer:shadow atIndex:0];
+    }
+    
+    if(direction & NLInnerShadowDirectionLeft) {
+        CGFloat yOffset = 0.0f;
+        CGFloat leftHeight = self.bounds.size.height;
+        
+        shadow = [CAGradientLayer layer];
+        shadow.colors = colorsArray;
+        shadow.frame = CGRectMake(0, yOffset, radius, leftHeight);
+        shadow.startPoint = CGPointMake(0.0, 0.5);
+        shadow.endPoint = CGPointMake(1.0, 0.5);
+        [shadowView.layer insertSublayer:shadow atIndex:0];
+    }
+    
+    if(direction & NLInnerShadowDirectionRight) {
+        CGFloat yOffset = 0.0f;
+        CGFloat rightHeight = self.bounds.size.height;
+        
+        shadow = [CAGradientLayer layer];
+        shadow.colors = colorsArray;
+        shadow.frame = CGRectMake(self.bounds.size.width - radius, yOffset, radius, rightHeight);
+        shadow.startPoint = CGPointMake(1.0, 0.5);
+        shadow.endPoint = CGPointMake(0.0, 0.5);
+        [shadowView.layer insertSublayer:shadow atIndex:0];
+    }
+    
+    return shadowView;
 }
 
 - (UIView *)createShadowViewWithRadius:(CGFloat)radius andColor:(UIColor *)color inDirection:(NLInnerShadowDirection)direction {

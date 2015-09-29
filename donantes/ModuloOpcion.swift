@@ -21,6 +21,7 @@ class ModuloOpcion: NSObject {
     var titulo : String
    var subtitulo : String
     var storyBoard : String
+    var color : UIColor
     private var nombreIcono : String
     
     override init () {
@@ -29,14 +30,16 @@ class ModuloOpcion: NSObject {
         titulo = ""
         subtitulo = ""
         storyBoard = ""
+        color = UIColor.whiteColor()
     }
     
-    init (name : String, title : String, subtitle: String, iconName: String, storyBoardName : String) {
+    init (name : String, title : String, subtitle: String, iconName: String, storyBoardName : String, color : UIColor) {
         nombre = name
         nombreIcono = iconName
         titulo = title
         subtitulo = subtitle
         storyBoard = storyBoardName
+        self.color = color
     }
     
     func icono() -> UIImage {

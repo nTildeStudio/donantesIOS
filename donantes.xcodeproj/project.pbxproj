@@ -57,6 +57,12 @@
 		F1E37BCD1BA9C08300B78605 /* ConfiguracionInicialSeleccionarCentroDonacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E37BCB1BA9C08300B78605 /* ConfiguracionInicialSeleccionarCentroDonacionViewController.swift */; };
 		F1E37BDA1BAAD74900B78605 /* UIView+InnerShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E37BD91BAAD74900B78605 /* UIView+InnerShadow.m */; };
 		F1E37BDB1BAAD74900B78605 /* UIView+InnerShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E37BD91BAAD74900B78605 /* UIView+InnerShadow.m */; };
+		F1E4C4BC1BB93E9800E2904C /* ListadoPuntosDonacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4C4BB1BB93E9800E2904C /* ListadoPuntosDonacionViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F1E4C4BD1BB93E9800E2904C /* ListadoPuntosDonacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4C4BB1BB93E9800E2904C /* ListadoPuntosDonacionViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F1E4C4BF1BB9557D00E2904C /* PuntoDeDonacionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4C4BE1BB9557D00E2904C /* PuntoDeDonacionTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		F1E4C4C01BB9557D00E2904C /* PuntoDeDonacionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4C4BE1BB9557D00E2904C /* PuntoDeDonacionTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		F1E4C4C21BB9590500E2904C /* DetallePuntoDonacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4C4C11BB9590500E2904C /* DetallePuntoDonacionViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F1E4C4C31BB9590500E2904C /* DetallePuntoDonacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4C4C11BB9590500E2904C /* DetallePuntoDonacionViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +112,9 @@
 		F1E37BD71BAAD74800B78605 /* donantesTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "donantesTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		F1E37BD81BAAD74900B78605 /* UIView+InnerShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+InnerShadow.h"; sourceTree = "<group>"; };
 		F1E37BD91BAAD74900B78605 /* UIView+InnerShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+InnerShadow.m"; sourceTree = "<group>"; };
+		F1E4C4BB1BB93E9800E2904C /* ListadoPuntosDonacionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListadoPuntosDonacionViewController.swift; sourceTree = "<group>"; };
+		F1E4C4BE1BB9557D00E2904C /* PuntoDeDonacionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntoDeDonacionTableViewCell.swift; sourceTree = "<group>"; };
+		F1E4C4C11BB9590500E2904C /* DetallePuntoDonacionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetallePuntoDonacionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +224,9 @@
 		F12311531BAB056D00680048 /* Donde Donar */ = {
 			isa = PBXGroup;
 			children = (
+				F1E4C4BB1BB93E9800E2904C /* ListadoPuntosDonacionViewController.swift */,
+				F1E4C4BE1BB9557D00E2904C /* PuntoDeDonacionTableViewCell.swift */,
+				F1E4C4C11BB9590500E2904C /* DetallePuntoDonacionViewController.swift */,
 				F1E37BB81BA9B5AA00B78605 /* DondeDonar.storyboard */,
 			);
 			name = "Donde Donar";
@@ -402,8 +414,10 @@
 			files = (
 				F123115C1BAB05E200680048 /* CentroDeDonacionTableViewCell.swift in Sources */,
 				F1E37BCC1BA9C08300B78605 /* ConfiguracionInicialSeleccionarCentroDonacionViewController.swift in Sources */,
+				F1E4C4BF1BB9557D00E2904C /* PuntoDeDonacionTableViewCell.swift in Sources */,
 				F1E37BB01BA9963F00B78605 /* MainViewController.swift in Sources */,
 				F123115F1BAB063900680048 /* ConfiguracionInicialIdentificadorDeDonanteViewController.swift in Sources */,
+				F1E4C4BC1BB93E9800E2904C /* ListadoPuntosDonacionViewController.swift in Sources */,
 				F1E37BB31BA9997B00B78605 /* MainOptionsTableViewCell.swift in Sources */,
 				38EFDDB41BA6FCFC0021B367 /* AppDelegate.swift in Sources */,
 				F12311621BAB064B00680048 /* ConfiguracionInicialGrupoSanguineoViewController.swift in Sources */,
@@ -414,6 +428,7 @@
 				F1E37BDA1BAAD74900B78605 /* UIView+InnerShadow.m in Sources */,
 				F1026F2D1BB3F3AE003C69B5 /* HorarioDeDonacion.swift in Sources */,
 				F1026F301BB40C3E003C69B5 /* AppInfo.swift in Sources */,
+				F1E4C4C21BB9590500E2904C /* DetallePuntoDonacionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,13 +441,16 @@
 				F1026F2E1BB3F3AE003C69B5 /* HorarioDeDonacion.swift in Sources */,
 				F123115D1BAB05E200680048 /* CentroDeDonacionTableViewCell.swift in Sources */,
 				F1026F281BB3D8EA003C69B5 /* APIParseCommunicator.swift in Sources */,
+				F1E4C4C01BB9557D00E2904C /* PuntoDeDonacionTableViewCell.swift in Sources */,
 				F12311601BAB063900680048 /* ConfiguracionInicialIdentificadorDeDonanteViewController.swift in Sources */,
 				F1E37BB71BA99A1600B78605 /* ModuloOpcion.swift in Sources */,
+				F1E4C4BD1BB93E9800E2904C /* ListadoPuntosDonacionViewController.swift in Sources */,
 				F1E37BCD1BA9C08300B78605 /* ConfiguracionInicialSeleccionarCentroDonacionViewController.swift in Sources */,
 				F12311631BAB064B00680048 /* ConfiguracionInicialGrupoSanguineoViewController.swift in Sources */,
 				F1026F2B1BB3EEE3003C69B5 /* PuntoDeDonacion.swift in Sources */,
 				38EFDDCA1BA6FCFC0021B367 /* donantesTests.swift in Sources */,
 				F1026F311BB40C3E003C69B5 /* AppInfo.swift in Sources */,
+				F1E4C4C31BB9590500E2904C /* DetallePuntoDonacionViewController.swift in Sources */,
 				F1E37BC71BA9B80600B78605 /* AppDelegate.swift in Sources */,
 				F1E37BDB1BAAD74900B78605 /* UIView+InnerShadow.m in Sources */,
 				F1E37BB11BA9963F00B78605 /* MainViewController.swift in Sources */,

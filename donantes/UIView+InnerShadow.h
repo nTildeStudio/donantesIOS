@@ -47,6 +47,14 @@ typedef NS_OPTIONS(NSUInteger, NLInnerShadowDirection) {
 - (void)addInnerShadowWithRadius:(CGFloat)radius andColor:(UIColor *)color inDirection:(NLInnerShadowDirection)direction;
 
 /**
+ * Add Inner shadow to view.
+ * @param radius        : Thickness of the shadow.
+ * @param color         : The color to use for the shadow.
+  * @param colorEnd         : The color to use end for the shadow.
+ * @param direction     : The view edges to draw the shadow on.
+ */
+- (void)addInnerShadowWithRadius:(CGFloat)radius fromColor:(UIColor *)color toColor:(UIColor *)colorEnd inDirection:(NLInnerShadowDirection)direction;
+/**
  * Remove any Inner shadow from view.
  */
 - (void)removeInnerShadow;

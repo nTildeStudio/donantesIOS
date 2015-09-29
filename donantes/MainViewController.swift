@@ -34,7 +34,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         arrayModulos = loadModules()
         self.tableViewListadoOpciones.reloadData()
-    
+    print(AppInfo.sharedInstance.identificadorCentroRegional)
         if AppInfo.sharedInstance.identificadorCentroRegional != nil  && AppInfo.sharedInstance.identificadorCentroRegional != ""{
             APIParseCommunicator.getCentroRegionaleInBackground(AppInfo.sharedInstance.identificadorCentroRegional!, completion: { (result) -> Void in
                 AppInfo.sharedInstance.centroRegional = result
@@ -80,6 +80,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(MainCellIdentifier, forIndexPath: indexPath) as! MainOptionsTableViewCell
         cell.labelTitulo.text = arrayModulos[indexPath.row].titulo.localized
+        cell.labelSubtitulo.text = arrayModulos[indexPath.row].subtitulo.localized
+        cell.imageViewIcono.image = arrayModulos[indexPath.row].icono()
+        cell.addInnerShadowWithRadius(10.0, fromColor: arrayModulos[indexPath.row].color, toColor: UIColor.whiteColor(), inDirection: [NLInnerShadowDirection.Bottom])
         return cell
     }
     
@@ -102,15 +105,16 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     */
     func loadModules() -> [ModuloOpcion] {
         var toret : [ModuloOpcion] = []
-        let op1 = ModuloOpcion(name: "DondeDonar", title: "Donde donar", subtitle: "DondeDonar", iconName: "DondeDonar", storyBoardName: "DondeDonar")
+        let op1 = ModuloOpcion(name: "DondeDonar", title: "Donde donar", subtitle: "Listado de puntos de donación asociados a su centro regional", iconName: "ic_DondeDonar", storyBoardName: "DondeDonar", color:UIColor.redColor())
         toret.append(op1)
-        let op2 = ModuloOpcion(name: "AgendaDonaciones", title: "Agenda de donaciones", subtitle: "AgendaDonaciones", iconName: "AgendaDonaciones", storyBoardName: "AgendaDonaciones")
+        let op2 = ModuloOpcion(name: "AgendaDonaciones", title: "Agenda de donaciones", subtitle: "Consulte en su agenda cuando puede volver a donar", iconName: "ic_AgendaDonaciones", storyBoardName: "AgendaDonaciones", color:
+        UIColor(red: 71.0/255.0, green: 14.0/255.0, blue: 145.0/255.0, alpha: 1.0))
         toret.append(op2)
-        let op3 = ModuloOpcion(name: "AgendaDonaciones", title: "Información al donante", subtitle: "AgendaDonaciones", iconName: "AgendaDonaciones", storyBoardName: "AgendaDonaciones")
+        let op3 = ModuloOpcion(name: "InformacionAlDonante", title: "Información al donante", subtitle: "¿Tiene dudas sobre el proceso de donación? ¡Consulte nuestra sección de preguntas frecuentes!", iconName: "ic_InformacionAlDonante", storyBoardName: "InformacionAlDonante", color:UIColor(red: 0.0/255.0, green: 54.0/255.0, blue: 206.0/255.0, alpha: 1.0))
         toret.append(op3)
-        let op4 = ModuloOpcion(name: "Mensajes", title: "Mensajes del CTG Galicia", subtitle: "Mensajes", iconName: "Mensajes", storyBoardName: "Mensajes")
+        let op4 = ModuloOpcion(name: "Mensajes", title: "Mensajes de centro regional", subtitle: "Mensajes, avisos y notificaciones emitidas por su centro regional", iconName: "ic_Mensajes", storyBoardName: "Mensajes", color:UIColor(red: 53.0/255.0, green: 160.0/255.0, blue: 0.0/255.0, alpha: 1.0))
         toret.append(op4)
-        let op5 = ModuloOpcion(name: "Configuracion", title: "Configuracion ", subtitle: "Configuracion", iconName: "Configuracion", storyBoardName: "Configuracion")
+        let op5 = ModuloOpcion(name: "Configuracion", title: "Configuracion ", subtitle: "Revise y modifique la configuración de su APP", iconName: "ic_Configuracion", storyBoardName: "Configuracion", color:UIColor(red: 255.0/255.0, green: 78.0/255.0, blue: 0.0/255.0, alpha: 1.0))
         toret.append(op5)
         return toret
     }
