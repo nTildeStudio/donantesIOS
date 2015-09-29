@@ -26,11 +26,6 @@ class MainViewController: DonantesViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
                 self.title = "Donantes!"
-//        var bounds = self.navigationController?.navigationBar.bounds as CGRect!
-//        var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
-//        visualEffectView.frame = bounds
-//        visualEffectView.autoresizingMask = .FlexibleHeight | .FlexibleWidth
-//        self.navigationController?.navigationBar.addSubview(visualEffectView)
         
         arrayModulos = loadModules()
         self.tableViewListadoOpciones.reloadData()
@@ -39,7 +34,7 @@ class MainViewController: DonantesViewController, UITableViewDataSource, UITable
             showLoading()
             APIParseCommunicator.getCentroRegionaleInBackground(AppInfo.sharedInstance.identificadorCentroRegional!, completion: { (result) -> Void in
                 AppInfo.sharedInstance.centroRegional = result
-//                self.hideLoading()
+                self.hideLoading()
             })
         } else {
             let nc = self.storyboard!.instantiateViewControllerWithIdentifier("ConfiguracionInicialNavigationController") as! UINavigationController
